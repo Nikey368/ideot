@@ -9,7 +9,7 @@ document.querySelector(".writeHeader").innerHTML = `
                 <a href="home.html">home</a> |
                 <a href="archive.html">archive (comic list)</a> |
                 <a href="about.html">about</a> |
-                <a href="characters.html">cast</a>
+                <!--<a href="characters.html">cast</a>-->
             </div>
         </nav>
     </header>
