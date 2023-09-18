@@ -11,6 +11,7 @@ let digits = 0
 function input(num){
     if (num != "."){
         if (num == pi.toString().charAt(digits)) {
+            document.getElementById("body").style = "background-image: linear-gradient(hsl("+(36*num).toString()+", 100%, 85%), hsl("+(36*num).toString()+", 100%, 75%)); "
             document.getElementById("input").innerHTML += num;
             digits += 1;
             if (digits >= 10000) {
@@ -27,6 +28,7 @@ function input(num){
         return;
     }
     $.jStorage.set("pigamescores", Math.max($.jStorage.get("pigamescores", 0),digits));
+    document.getElementById("body").style = "background-image: linear-gradient(#ffffff,#ffffff); "
     document.getElementById("digits").innerHTML = "SCORE: " + digits + ", HIGHSCORE: " + $.jStorage.get("pigamescores", 0);
     digits = 0;
     document.getElementById("input").innerHTML = "";
