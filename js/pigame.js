@@ -20,8 +20,8 @@ function input(num){
         document.getElementById("input").innerHTML += ".";
         return;
     }
-    digits = 0
     $.jStorage.set("pigamescores", Math.max($.jStorage.get("pigamescores", 0),digits))
     document.getElementById("digits").innerHTML = "SCORE: " + digits + ", HIGHSCORE: " + $.jStorage.get("pigamescores", 0);
+    digits = 0
     document.getElementById("input").innerHTML = "";
 }
