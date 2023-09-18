@@ -6,7 +6,7 @@ while (x > 0) {
         pi += x / (i + 2n);
         i += 2n;
 }
-console.log(pi)
+let highscore = $.jStorage.get("pigamescores", 0)
 let digits = 0
 function input(num){
     if (num != "."){
@@ -21,6 +21,7 @@ function input(num){
         return;
     }
     digits = 0
-    document.getElementById("digits").innerHTML = "SCORE: " + digits;
+    $.jStorage.set("pigamescores", Math.max($.jStorage.get("pigamescores", 0),digits))
+    document.getElementById("digits").innerHTML = "SCORE: " + digits + ", HIGHSCORE: " + $.jStorage.get("pigamescores", 0);
     document.getElementById("input").innerHTML = "";
 }
