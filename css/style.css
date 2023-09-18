@@ -27,6 +27,10 @@ body.tools ul.topnav {
     background-color: #9e2515;
 }
 
+body.fun ul.topnav {
+    background-color: #48c477;
+}
+
 ul.topnav .right {
     position:absolute;
     right: 0;
@@ -50,6 +54,10 @@ body.default ul.topnav li a:hover:not(.active), body.default .dropdown:hover .dr
 
 body.tools ul.topnav li a:hover:not(.active), body.tools .dropdown:hover .dropbtn, body.tools .dropdown2:hover .dropbtn2 {
     background-color: #75200b;
+}
+
+body.fun ul.topnav li a:hover:not(.active), body.fun .dropdown:hover .dropbtn, body.fun .dropdown2:hover .dropbtn2 {
+    background-color: #287044;
 }
 
 .dropdown, .dropdown2 {
@@ -95,6 +103,9 @@ body.tools .active {
     background-color: #f3c48f;
 }
 
+body.tools .active {
+    background-color: #a4e7c8;
+}
 
 .title {
     text-align: center; 
@@ -122,6 +133,13 @@ body.tools .title {
     -webkit-text-stroke: 0.1px rgb(122, 56, 40);
 }
 
+body.fun .title {
+    background-color: #78f3af;
+    background-image: linear-gradient(180deg, #83f18c, #7bc09e);
+    color: #7cc79d;
+    -webkit-text-stroke: 0.1px rgb(122, 56, 40);
+}
+
 .outline {
     -webkit-text-stroke: 0.1px #00000046;
 }
@@ -138,6 +156,10 @@ body.default {
 
 body.tools {
     background-image: linear-gradient(#f0cea1, #e0817a); 
+}
+
+body.fun {
+    background-image: linear-gradient(#9bddac, #6db499); 
 }
 
 #page-container {
