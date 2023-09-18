@@ -80,6 +80,10 @@ body.tools .dropdown-content, body.tools .dropdown-content2 {
     background-color: #9e2515;
 }
 
+body.fun .dropdown-content, body.fun .dropdown-content2 {
+    background-color: #48c477;
+}
+
 
 .dropdown-content a, .dropdown-content2 a {
   color: black;
@@ -159,7 +163,7 @@ body.tools {
 }
 
 body.fun {
-    background-image: linear-gradient(#9bddac, #6db499); 
+    background-image: linear-gradient(#c6ecc9, #9de6cb); 
 }
 
 #page-container {
