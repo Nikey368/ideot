@@ -64,15 +64,34 @@
 
 
         <script>
+        function sqrt(value) {
+            if (value < 0n) {
+                throw 'square root of negative numbers is not supported'
+            }
+
+            if (value < 2n) {
+                return value;
+            }
+
+            function newtonIteration(n, x0) {
+                const x1 = ((n / x0) + x0) >> 1n;
+                if (x0 === x1 || x0 === (x1 - 1n)) {
+                    return x0;
+                }
+                return newtonIteration(n, x1);
+            }
+
+            return newtonIteration(value, 1n);
+        }
         var leftPrime;
         function myFunction(){
-          let x = document.getElementById("prime").value;
+          let x = BigInt(document.getElementById("prime").value);
             let prime = true;
           let badnumber = 0;
           let timesby = 0;
           array = [];
-            let xsqrt = Math.sqrt(x);
-            for (let i = 2; i < xsqrt - 1; i++) {
+            let xsqrt = sqrt(x);
+            for (let i = 2n; i < xsqrt - 1n; i++) {
               if(x % i == 0) {
               prime = false;
               timesby = i;
@@ -109,13 +128,13 @@
             }
         }
         function myFunction2(){
-          let x = leftPrime;
+          let x = BigInt(leftPrime);
             let prime = true;
           let badnumber = 0;
           let timesby = 0;
           array = [];
-            let xsqrt = Math.sqrt(x);
-            for (let i = 2; i < xsqrt - 1; i++) {
+          let xsqrt = sqrt(x);
+            for (let i = 2n; i < xsqrt - 1n; i++) {
               if(x % i == 0) {
               prime = false;
               timesby = i;
