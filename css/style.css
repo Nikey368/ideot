@@ -31,6 +31,10 @@ body.fun ul.topnav {
     background-color: #48c477;
 }
 
+body.empty ul.topnav {
+    background-color: #000000;
+}
+
 ul.topnav .right {
     position:absolute;
     right: 0;
@@ -60,6 +64,10 @@ body.fun ul.topnav li a:hover:not(.active), body.fun .dropdown:hover .dropbtn, b
     background-color: #287044;
 }
 
+body.empty ul.topnav li a:hover:not(.active), body.fun .dropdown:hover .dropbtn, body.fun .dropdown2:hover .dropbtn2 {
+    background-color: #505050;
+}
+
 .dropdown, .dropdown2 {
   display: inline-block;
 }
@@ -77,11 +85,15 @@ body.default .dropdown-content, body.default .dropdown-content2 {
 }
 
 body.tools .dropdown-content, body.tools .dropdown-content2 {
-    background-color: #9e2515;
+    background-color: #75200b;
 }
 
 body.fun .dropdown-content, body.fun .dropdown-content2 {
     background-color: #48c477;
+}
+
+body.empty .dropdown-content, body.empty .dropdown-content2 {
+    background-color: #000000;
 }
 
 
@@ -93,7 +105,9 @@ body.fun .dropdown-content, body.fun .dropdown-content2 {
   text-align: left;
 }
 
-.dropdown-content a:hover:not(.active), .dropdown-content2 a:hover:not(.active) {background-color: #111138;}
+.dropdown-content a:hover:not(.active), .dropdown-content2 a:hover:not(.active) {
+    background-color: #050633;
+}
 
 .dropdown:hover .dropdown-content, .dropdown2:hover .dropdown-content2 {
   display: block;
@@ -109,6 +123,10 @@ body.tools .active {
 
 body.fun .active {
     background-color: #a4e7c8;
+}
+
+body.empty .active {
+    background-color: #272727;
 }
 
 .title {
@@ -144,6 +162,12 @@ body.fun .title {
     -webkit-text-stroke: 0.1px rgb(122, 56, 40);
 }
 
+body.empty .title {
+    background-color: #000000;
+    color: #000000;
+    -webkit-text-stroke: 0.1px rgb(0, 0, 0);
+}
+
 .outline {
     -webkit-text-stroke: 0.1px #00000046;
 }
@@ -164,6 +188,10 @@ body.tools {
 
 body.fun {
     background-image: linear-gradient(#c6ecc9, #9de6cb); 
+}
+
+body.fun {
+    background-color: #ffffff;
 }
 
 #page-container {
