@@ -33,3 +33,18 @@ function input(num){
     digits = 0;
     document.getElementById("input").innerHTML = "";
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.defaultPrevented) {
+        return; // Do nothing if the event was already processed
+    }
+
+    if ((isFinite(event.key) && event.key !== ' ')){
+        input(Number(event.key));
+    } else if (event.key === ".") {
+        input(".")
+    }
+
+    event.preventDefault();
+
+});
