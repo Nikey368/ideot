@@ -83,6 +83,10 @@ function calculate(){
     )
 }
 
+function increase(id,amount) {
+    document.getElementById(id).value = Math.round((Number(document.getElementById(id).value) + amount + Number.EPSILON) * 100) / 100
+}
+
 function copydiffi() {
     document.getElementById("current").value = saveddiffi;
 }

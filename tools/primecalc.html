@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis&family=Urbanist&display=swap" rel="stylesheet">
 </head>
-<body class="tools">
+<body class="tools" id="body">
   <div id="page-container">
     <div id="content-wrap" style="text-align: center; font-family: 'Dosis', sans-serif;">
       <header>
@@ -90,6 +90,8 @@
         }
         var leftPrime;
         function myFunction(){
+          document.getElementById("body").classList.remove("tools");
+          document.getElementById("body").classList.add("empty");
           let x = BigInt(document.getElementById("prime").value);
             let prime = true;
           let badnumber = 0;
@@ -131,8 +133,12 @@
               }
             }
             }
+          document.getElementById("body").classList.remove("empty");
+          document.getElementById("body").classList.add("tools");
         }
         function myFunction2(){
+          document.getElementById("body").classList.remove("tools");
+          document.getElementById("body").classList.add("empty");
           let x = BigInt(leftPrime);
             let prime = true;
           let badnumber = 0;
@@ -174,6 +180,8 @@
               }
             }
             }
+          document.getElementById("body").classList.remove("empty");
+          document.getElementById("body").classList.add("tools");
         }
         myFunction()
         </script>

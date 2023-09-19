@@ -133,6 +133,9 @@ body.empty .active {
     text-align: center; 
     font-size:64px; 
     font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+}
+
+.title, .gradient {
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;

@@ -49,14 +49,32 @@
       <form>
         <label for="current">current difficulty:</label>
         <input type="number" id="current" step="0.1">
+        <input type="button" onclick="increase('current',1)" value="+1">
+        <input type="button" onclick="increase('current',-1)" value="-1">
+        <input type="button" onclick="increase('current',0.5)" value="+0.5">
+        <input type="button" onclick="increase('current',-0.5)" value="-0.5">
+        <input type="button" onclick="increase('current',0.1)" value="+0.1">
+        <input type="button" onclick="increase('current',-0.1)" value="-0.1">
+        <input type="button" onclick="increase('current',0.01)" value="+0.01">
+        <input type="button" onclick="increase('current',-0.01)" value="-0.01">
         <br>
         <label for="boost">amount boosted:</label>
         <input type="number" id="boost" step="0.5">
+        <input type="button" onclick="increase('boost',0.5)" value="+0.5">
+        <input type="button" onclick="increase('boost',-0.5)" value="-0.5">
         <br>
         <label for="survivors">players survived:</label>
         <input type="number" id="survivors">
+        <input type="button" onclick="increase('survivors',5)" value="+5">
+        <input type="button" onclick="increase('survivors',-5)" value="-5">
+        <input type="button" onclick="increase('survivors',1)" value="+1">
+        <input type="button" onclick="increase('survivors',-1)" value="-1">
         <label for="total">/</label>
         <input type="number" id="total">
+        <input type="button" onclick="increase('total',5)" value="+5">
+        <input type="button" onclick="increase('total',-5)" value="-5">
+        <input type="button" onclick="increase('total',1)" value="+1">
+        <input type="button" onclick="increase('total',-1)" value="-1">
         <br>
         <input type="button" onclick="calculate()" value="evaluate">
         <input type="button" onclick="copydiffi()" value="copy output into difficulty">
