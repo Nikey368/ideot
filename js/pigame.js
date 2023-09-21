@@ -1,3 +1,10 @@
+var volume = true
+var rainbowbg = true
+var bgm = new Audio('../sound/pigame/pigame.wav')
+var start = new Audio('../sound/pigame/literally just G.wav')
+bgm.volume = 0.5;
+start.loop = true;
+bgm.loop = true;
 let i = 1n;
 let x = 3n * (10n ** 10020n);
 let pi = x;
@@ -8,10 +15,50 @@ while (x > 0) {
 }
 let highscore = $.jStorage.get("pigamescores", 0)
 let digits = 0
+
+function playsound(){
+    volume = !volume
+    if (!start.paused){
+        start.pause();
+        start.load();
+    }
+    if (!bgm.paused){
+        bgm.pause();
+        bgm.load()
+    }
+    if (volume && digits > 1){
+        bgm.play();
+    }
+}
+
+function rainbow(){
+    rainbowbg = !rainbowbg;
+    document.getElementById("body").style = "background-image: linear-gradient(#ffffff,#ffffff); "
+}
+
 function input(num){
+    if (volume){
+        if (digits == 0){
+            start.play();
+        } else if (digits == 1){
+            if (num == "."){
+                let note = new Audio('../sound/pigame/3.wav')
+                note.play();
+            }
+            start.pause();
+            start.load()
+            bgm.play();
+        }
+    }
     if (num != "."){
         if (num == pi.toString().charAt(digits)) {
-            document.getElementById("body").style = "background-image: linear-gradient(hsl("+(36*num).toString()+", 100%, 85%), hsl("+(36*num).toString()+", 100%, 75%)); "
+            if (volume) {
+                let note = new Audio('../sound/pigame/'+num.toString()+'.wav')
+                note.play()
+            }
+            if (rainbowbg){
+                document.getElementById("body").style = "background-image: linear-gradient(hsl("+(36*num).toString()+", 100%, "+(85 + (15 * digits / 10000))+"%), hsl("+(36*num).toString()+", 100%, "+(75 + (15 * digits / 10000))+"%)); "
+            }
             document.getElementById("input").innerHTML += num;
             digits += 1;
             if (digits >= 10000) {
@@ -27,11 +74,18 @@ function input(num){
         document.getElementById("input").innerHTML += ".";
         return;
     }
+    if (volume){
+        bgm.pause()
+        bgm.load()
+    }
     $.jStorage.set("pigamescores", Math.max($.jStorage.get("pigamescores", 0),digits));
     document.getElementById("body").style = "background-image: linear-gradient(#ffffff,#ffffff); "
     document.getElementById("digits").innerHTML = "SCORE: " + digits + ", HIGHSCORE: " + $.jStorage.get("pigamescores", 0);
     digits = 0;
     document.getElementById("input").innerHTML = "";
+    if (volume){
+        start.pause();
+    }
 }
 
 document.addEventListener('keydown', function(event) {
