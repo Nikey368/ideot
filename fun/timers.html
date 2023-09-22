@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis&family=Urbanist&display=swap" rel="stylesheet">
+</head>
+<body class="fun">
+  <div id="page-container">
+    <div id="content-wrap" style="text-align: center; font-family: 'Dosis', sans-serif;">
+      <header>
+        <h1 class="title">ideot</h1>
+      </header>
+      
+      <!-- NAVBAR -->
+
+      <nav>
+        <ul class="topnav" style="font-family: 'Dosis', sans-serif;">
+          <li><a href="../index.html"><b>home</b></a></li>
+          <li><a href="../news.html"><b>news</b></a></li>
+          <li><a href="../about.html"><b>about</b></a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">fun</a>
+            <div class="dropdown-content">
+              <a href="../fun/pigame.html">pi game</a>
+              <a href="../fun/amialive.html">the "am i alive test"</a>
+              <a class="active" href="../fun/timers.html">timers and countdowns</a>
+            </div>
+          </li>
+          <li class="dropdown2">
+            <a href="javascript:void(0)" class="dropbtn2">tools</a>
+            <div class="dropdown-content2">
+              <a href="../tools/fe2diffcalc.html">fe2 difficulty calculator</a>
+              <a href="../tools/primecalc.html">prime checker</a>
+            </div>
+          </li>
+          <li class="right"><a href="../comics/home.html"><b>comics</b></a></li>
+        </ul>
+      </nav>
+
+      <!-- NAVBAR -->
+
+      <!-- ACTUAL WEBSITE -->
+
+      <h1>timers and countdowns</h1>
+      <p>a bunch of timers and contdowns</p>
+      <p>(in format DDD:HH:MM:SS)</p>
+      <h2>starting with the timers:</h2>
+      <div class="timers">
+        <h3>time since you opened this webpage:</h3>
+        <h3 id="lastopened">000:00:00:00</h3>
+        <br>
+        <h3>time since the world was supposed to end according to the mayans:</h3>
+        <h6>(well, actually, according to random people in the 2000s. december 21st 2012 truly was just the end of a really long calendar, random people just thought that the end of the calendar meant the end of the world. too bad they were off by about 7 years.)</h6>
+        <h3 id="sincemayaend">000:00:00:00</h3>
+        <h3>time since the start of the worst year:</h3>
+        <h6>(aka, 2020. okay, maybe there have been worse years. but doesn't mean i liked it.)</h6>
+        <h3 id="sincestart2020">000:00:00:00</h3>
+        <h3>time since the start of Y2K:</h3>
+        <h6>(aka, 2000, which, coincidentally, is another day where people thought the world was going to end. okay, well, they thought that the computers would glitch out. which it kinda did, but not really. look, just <a href="https://en.wikipedia.org/wiki/Year_2000_problem">read the wikipedia article</a>)</h6>
+        <h3 id="sincestart2000">000:00:00:00</h3>
+      </div>
+      <h2>and then the countdowns:</h2>
+      <div class="countdowns">
+        <h3>time until next minute:</h3>
+        <h3 id="nextminute">000:00:00:00</h3>
+        <h3>time until next hour:</h3>
+        <h3 id="nexthour">000:00:00:00</h3>
+        <br>
+        <h3>time until next christmas:</h3>
+        <h3 id="nextchristmas">000:00:00:00</h3>
+        <h3>time until next year:</h3>
+        <h3 id="nextyear">000:00:00:00</h3>
+        <br>
+        <h3>time until the end of time:</h3>
+        <h6>(okay, well, unix time. basically, once this countdown hits zero, the system which counts the time since january 1st 1970 will overflow, breaking a bunch of older computers that still use 32-bit integers. look <a href="https://en.wikipedia.org/wiki/Year_2038_problem">at this article</a>)</h6>
+        <h3 id="timeend">000:00:00:00</h3>
+      </div>
+      
+      
+      <!-- ACTUAL WEBSITE -->
+
+    </div>
+    <footer>
+      <p>here's the footer where i'm supposed to put copyright.
+      <br>however, i'm dumb and therefore do not know how to set up copyright. let's just pretend that i did set up a copyright. ideot 2023.
+      <br><strong>this part of the website is made by me, ideot. you're welcome</strong></p>
+    </footer>
+    <script src="../js/timers.js"></script>
+  </div>
+</body>
+</html>
+
+

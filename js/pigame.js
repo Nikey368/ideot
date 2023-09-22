@@ -16,6 +16,13 @@ while (x > 0) {
 let highscore = $.jStorage.get("pigamescores", 0)
 let digits = 0
 
+let notes = []
+
+for (let filenum = 0; filenum < 10, filenum++;) {
+    let note = new Audio('../sound/pigame/'+filenum+'.wav');
+    notes.splice(filenum,0,note);
+};
+
 function playsound(){
     volume = !volume
     if (!start.paused){
@@ -42,7 +49,7 @@ function input(num){
             start.play();
         } else if (digits == 1){
             if (num == "."){
-                let note = new Audio('../sound/pigame/3.wav')
+                let note = notes[3]
                 note.play();
             }
             start.pause();
@@ -53,7 +60,7 @@ function input(num){
     if (num != "."){
         if (num == pi.toString().charAt(digits)) {
             if (volume) {
-                let note = new Audio('../sound/pigame/'+num.toString()+'.wav')
+                let note = notes[num]
                 note.play()
             }
             if (rainbowbg){
