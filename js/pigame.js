@@ -60,7 +60,7 @@ function input(num){
     if (num != "."){
         if (num == pi.toString().charAt(digits)) {
             if (volume) {
-                let note = notes[num]
+                let note = notes[Number(num)]
                 note.play()
             }
             if (rainbowbg){
