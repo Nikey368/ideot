@@ -17,8 +17,14 @@ var nexthour = Math.ceil(webpageopened / 3600000) * 3600000;
 let christmasYear = dateofwebpageopened.getFullYear();
 let christmasDate = new Date(christmasYear, 11, 25);
 
-if (dateofwebpageopened.getMonth() == 11 && dateofwebpageopened.getDate() > 25) {
+let birthdayYear = dateofwebpageopened.getFullYear();
+let birthdayDate = new Date(christmasYear, 11, 28);
+
+if (dateofwebpageopened.getMonth() == 11 && dateofwebpageopened.getDate() >= 25) {
   christmasYear = christmasYear + 1;
+  if (dateofwebpageopened.getDate() >= 28) {
+    birthdayYear += 1;
+  }
 }
 
 var nextfriday = getNextDayOfWeek(dateofwebpageopened,4)
@@ -96,6 +102,31 @@ let untilnextchristmas = setInterval(function() {
     }
 }, 1000 );
 
+let untilnextbirthday = setInterval(function() {
+
+    // Get today's date and time
+    let now = new Date().getTime();
+    let countDownDate = birthdayDate.getTime();
+      
+    // Find the distance between now and the count down date
+    let distance = countDownDate - now;
+      
+    // Time calculations for days, hours, minutes and seconds
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+      
+    // Output the result in an element with id="demo"
+    document.getElementById("nextbirthday").innerHTML = days.toString().padStart(3,0) + ":" + hours.toString().padStart(2,0) + ":"
+    + minutes.toString().padStart(2,0) + ":" + seconds.toString().padStart(2,0);
+
+    if (distance <= 0) {
+        birthdayYear += 1;
+        birthdayDate = new Date(birthdayYear, 11, 25);
+    }
+}, 1000 );
+
 let untilnextyear = setInterval(function() {
 
     // Get today's date and time
@@ -137,6 +168,30 @@ let untiltimeend = setInterval(function() {
 
     if (distance <= 0) {
         document.getElementById("timeend").innerHTML = "COMPLETE";
+    }
+}, 1000 );
+
+let untildrinkage = setInterval(function() {
+
+    // Get today's date and time
+    let now = new Date().getTime();
+    let countDownDate = new Date(2027,11,28);
+      
+    // Find the distance between now and the count down date
+    let distance = countDownDate - now;
+      
+    // Time calculations for days, hours, minutes and seconds
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+      
+    // Output the result in an element with id="demo"
+    document.getElementById("drinkage").innerHTML = days.toString().padStart(3,0) + ":" + hours.toString().padStart(2,0) + ":"
+    + minutes.toString().padStart(2,0) + ":" + seconds.toString().padStart(2,0);
+
+    if (distance <= 0) {
+        document.getElementById("drinkage").innerHTML = "COMPLETE";
     }
 }, 1000 );
 
