@@ -27,6 +27,8 @@ function onPlay(){
     } else {
         leftaudio.pause();
         rightaudio.pause();
+        leftaudio.load();
+        rightaudio.load();
     }
     
 }
