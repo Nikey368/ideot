@@ -243,6 +243,30 @@ let untilthatonereallybigunix = setInterval(function() {
     }
 }, 1000 );
 
+let untilarcaneoddysey = setInterval(function() {
+
+    // Get today's date and time
+    let now = new Date().getTime();
+    let countDownDate = new Date(1696618800000);
+      
+    // Find the distance between now and the count down date
+    let distance = countDownDate - now;
+      
+    // Time calculations for days, hours, minutes and seconds
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+      
+    // Output the result in an element with id="demo"
+    document.getElementById("arcaneoddysey").innerHTML = days.toString().padStart(3,0) + ":" + hours.toString().padStart(2,0) + ":"
+    + minutes.toString().padStart(2,0) + ":" + seconds.toString().padStart(2,0);
+
+    if (distance <= 0) {
+        document.getElementById("arcaneoddysey").innerHTML = "COMPLETE";
+    }
+}, 1000 );
+
 let lastopened = setInterval(function() {
 
     // Get today's date and time
@@ -384,5 +408,29 @@ let sincetwosday = setInterval(function() {
 
     if (distance <= 0) {
         document.getElementById("sincetwosday").innerHTML = "it seems you have time travelled to a time that was before this date. oopsies."
+    }
+}, 1000 );
+
+let sincebirthday = setInterval(function() {
+
+    // Get today's date and time
+    let now = new Date().getTime();
+    let countDownDate = new Date(2009,11,28).getTime();
+      
+    // Find the distance between now and the count down date
+    let distance = now - countDownDate;
+      
+    // Time calculations for days, hours, minutes and seconds
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+      
+    // Output the result in an element with id="demo"
+    document.getElementById("sincebirthday").innerHTML = days.toString().padStart(3,0) + ":" + hours.toString().padStart(2,0) + ":"
+    + minutes.toString().padStart(2,0) + ":" + seconds.toString().padStart(2,0);
+
+    if (distance <= 0) {
+        document.getElementById("sincebirthday").innerHTML = "it seems you have time travelled to a time that was before this date. oopsies."
     }
 }, 1000 );
