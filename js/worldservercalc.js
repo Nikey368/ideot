@@ -10,6 +10,8 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=9ZiXT0
 var popup = L.popup();
 var marker = L.marker();
 
+var markerShown = false;
+
 function onMapClick(e) {
     let lat = Math.round((Number(e.latlng.lat) + Number.EPSILON) * 10000) / 10000
     let lng = Math.round((Number(e.latlng.lng) + Number.EPSILON) * 10000) / 10000
@@ -26,7 +28,8 @@ function onMapClick(e) {
 }
 
 function removeMarker() {
-    marker.removeFrom(map)
+    marker.removeFrom(map);
+    markerShown = false;
 }
 
 function tolatlong() {
@@ -49,8 +52,39 @@ function tomccoords() {
     marker
         .setLatLng([document.getElementById("lat").value,document.getElementById("long").value])
         .addTo(map);
+    markerShown = true;
     map.flyTo([document.getElementById("lat").value,document.getElementById("long").value],map.getZoom())
     marker.on('click',removeMarker)
 }
 
 map.on('click', onMapClick);
+
+document.addEventListener('keydown', function(event) {
+    if (event.defaultPrevented) {
+        return; // Do nothing if the event was already processed
+    }
+    switch (event.key) {
+        case "Enter":
+          map.flyTo([0,0],map.getZoom())
+          break;
+        case "m":
+          if (markerShown) {
+            map.flyTo([[marker.getLatLng().lat,marker.getLatLng().lng],document.getElementById("long").value],map.getZoom())
+            break; 
+          }
+          map.flyTo([0,0],map.getZoom())
+          break;
+        case "M":
+            if (markerShown) {
+              map.flyTo([[marker.getLatLng().lat,marker.getLatLng().lng],document.getElementById("long").value],map.getZoom())
+              break; 
+            }
+            map.flyTo([0,0],map.getZoom())
+            break;
+        default:
+          return; // Quit when this doesn't handle the key event.
+      }
+
+    event.preventDefault();
+
+});
