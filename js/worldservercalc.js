@@ -69,14 +69,14 @@ document.addEventListener('keydown', function(event) {
           break;
         case "m":
           if (markerShown) {
-            map.flyTo([[marker.getLatLng().lat,marker.getLatLng().lng],document.getElementById("long").value],map.getZoom())
+            map.flyTo([marker.getLatLng().lat,marker.getLatLng().lng],map.getZoom())
             break; 
           }
           map.flyTo([0,0],map.getZoom())
           break;
         case "M":
             if (markerShown) {
-              map.flyTo([[marker.getLatLng().lat,marker.getLatLng().lng],document.getElementById("long").value],map.getZoom())
+              map.flyTo([marker.getLatLng().lat,marker.getLatLng().lng],map.getZoom())
               break; 
             }
             map.flyTo([0,0],map.getZoom())
