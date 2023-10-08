@@ -7,9 +7,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis&family=Urbanist&display=swap" rel="stylesheet">
 
-  <title>ARE YOU ALIVE</title>
+  <title>minced raft</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+
 </head>
-<body class="fun">
+<body class="tools" id="body">
   <div id="page-container">
     <div id="content-wrap" style="text-align: center; font-family: 'Dosis', sans-serif;">
       <header>
@@ -27,7 +36,7 @@
             <a href="javascript:void(0)" class="dropbtn">fun</a>
             <div class="dropdown-content">
               <a href="../fun/pigame.html">pi game</a>
-              <a class="active" href="../fun/amialive.html">the "am i alive test"</a>
+              <a href="../fun/amialive.html">the "am i alive test"</a>
               <a href="../fun/timers.html">timers and countdowns</a>
             </div>
           </li>
@@ -37,7 +46,7 @@
               <a href="../tools/fe2diffcalc.html">fe2 difficulty calculator</a>
               <a href="../tools/primecalc.html">prime checker</a>
               <a href="../tools/audiochanneltest.html">audio channel tester</a>
-              <a href="../tools/worldservercoordinatecalc.html">world server coordinate calculator</a>
+              <a class="active" href="../tools/worldservercoordinatecalc.html">world server coordinate calculator</a>
             </div>
           </li>
           <li class="right"><a href="../comics/home.html"><b>comics</b></a></li>
@@ -45,53 +54,38 @@
       </nav>
 
       <!-- NAVBAR -->
-
-      <!-- ACTUAL WEBSITE -->
-
-      <h1>are you (the reader) still alive?</h1>
-      <p id="yes" style="font-size: 78px;"></p>
       
       <!-- ACTUAL WEBSITE -->
 
+      <h1>world coordinates to server coordinates calculator</h1>
+      <p>for my mc server</p>
+
+      <p>i took the calculations from <a href="https://earth.motfe.net/coordinate-calculator/">here</a>. this is also the place where i downloaded the world from</p>
+      
+      <div id="map"></div>
+
+      <form>
+        <label for="xpos">x pos:</label>
+        <input type="number" id="xpos">
+        <label for="zpos">z pos:</label>
+        <input type="number" id="zpos">
+        <input type="button" onclick="tolatlong()" value="to lat-long">
+        <br>
+        <label for="lat">latitude:</label>
+        <input type="number" id="lat">
+        <label for="lat">longitude:</label>
+        <input type="number" id="long">
+        <input type="button" onclick="tomccoords()" value="to mc coords">
+      </form>
+      
     </div>
     <footer>
       <p>here's the footer where i'm supposed to put copyright.
-      <br>however, i'm dumb and therefore do not know how to set up copyright. let's just pretend that i did set up a copyright. ideot 2023.
-      <br><strong>this part of the website is made by me, ideot. you're welcome</strong></p>
+      <br>oh yeah, this page is licenced under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+      <br><strong>this part of the website is made by me, ideot. you're welcome. ALSO THE MAP RUNS ON LEAFLET!!!!!!</strong></p>
     </footer>
-    <script>
-      const texts = [
-        "yes",
-        "yeah",
-        "i mean, of course you are",
-        "if you're reading this, yes",
-        "what did you think, you weren't alive?",
-        "yes, of course",
-        "uh huh",
-        "yep",
-        "yea",
-        "correct",
-        "affirmative",
-        "positive",
-        "probably",
-        "yee",
-        "yuh huh",
-        "for now",
-        "yar",
-        "uh, yeah?",
-        "maybe",
-        "if you can see this text, yes",
-        "yis",
-        "that is correct",
-        "correctomundo",
-        "はい",
-        "all vital signs normal",
-        "i think",
-      ];
-
-      document.getElementById("yes").innerHTML = texts[Math.floor(Math.random() * texts.length)]
-    </script>
   </div>
+  <script src="../js/worldservercalc.js" defer></script>
 </body>
 </html>
 
