@@ -238,3 +238,12 @@ footer {
 #map { 
     height: 512px; 
 }
+
+.judgements {
+    color: rgb(0, 0, 0);
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
