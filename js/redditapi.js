@@ -3,7 +3,7 @@ export default {
       // fetch api of reddit
       return (
         fetch(
-          `http://www.reddit.com/search.json?q=${searchTerm}&t=day&sort=${sortBy}&limit=${searchLimit}`
+          `https://www.reddit.com/search.json?q=${searchTerm}&t=day&sort=${sortBy}&limit=${searchLimit}`
         )
           .then((res) => res.json())
           .then((data) => data.data.children.map((data) => data.data))
