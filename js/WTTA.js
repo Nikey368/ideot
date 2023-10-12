@@ -14,11 +14,19 @@ var url = ""
 var lastGeneration = 0
 
 // truncate text
-function truncateText(text, limit) {
-    const shortened = text.indexOf("", limit);
-    if (shortened == -1) return text;
-    return text.substring(0, shortened);
+function acronyms(text) {
+    let output = text
+    if (document.getElementById("autoacronym").checked) {
+        output = output.replaceAll(/am i the asshole/gi,"AITA")
+        output = output.replaceAll(/would i be the asshole/gi,"WIBTA")
+    } else {
+        output = output.replaceAll(/AITA[H]{0,1}/gi,"Am I The Asshole")
+        output = output.replaceAll(/WIBTA[H]{0,1}/gi,"Would I Be The Asshole")
+    }
+    return output
   }
+
+function removeDigits(x, n){ return (x-(x%Math.pow(10, n)))/Math.pow(10, n) }
 
 document.getElementById("startButton").addEventListener("click", (e) => {
     e.preventDefault();
@@ -49,12 +57,15 @@ document.getElementById("startButton").addEventListener("click", (e) => {
         url = post.url
         document.getElementById("answer").innerHTML = `vote!`
 
+        let postDate = new Date(post.created_utc*1000)
+
         output = `
         <div class="post" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
             <div class="post-body">
-                <h2 class="post-title">${post.title}</h2>
-                <h5 class="post-title">This submission was made by u/${post.author}</h5>
-                <p class="post-text" style="font-size: 18px">${post.selftext}</p>
+                <h2 class="post-title">${acronyms(post.title)}</h2>
+                <h5 class="post-title">This submission was made by u/${acronyms(post.author)} on ${postDate.toDateString() + " " +("0" + postDate.getHours()).slice(-2) + ":" + ("0" + postDate.getMinutes()).slice(-2)}</h5>
+                <h6 class="post-title">situation id ${post.created_utc}</h6>
+                <p class="post-text" style="font-size: 18px">${acronyms(post.selftext)}</p>
             </div>
         </div>
         `;
@@ -63,7 +74,6 @@ document.getElementById("startButton").addEventListener("click", (e) => {
     });
 })
 var buttons = document.getElementsByClassName("judgements");
-console.log(buttons)
 
 var judge = function() {
     console.log(this)
@@ -81,3 +91,32 @@ var judge = function() {
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click',judge,false);
 }
+
+document.getElementById("autoacronym").addEventListener('click',function(e) {
+    if (e.defaultPrevented) {
+        return; // Do nothing if the event was already processed
+    }
+    document.getElementById("results").innerHTML = acronyms(document.getElementById("results").innerHTML);
+    if (document.getElementById("autoacronym").hasClass("toggleon")) {
+        document.getElementById("autoacronym").removeAttr("checked"); //uncheck
+        document.getElementById("autoacronym").removeClass("toggleon");  //toggle off
+        // do stuff ,,,
+    } else {
+        document.getElementById("autoacronym").attr("checked","checked");
+        document.getElementById("autoacronym").addClass("toggleon");
+        // do other stuff
+    }
+    e.preventDefault();
+});
+
+let situationid = setInterval(function() {
+
+    // Get today's date and time
+    let now = new Date().getTime();
+    let mostrecent = now - 74800000;
+    let leastrecent = now - 96400000;
+      
+    // Output the result in an element with id="demo"
+    document.getElementById("situationid").innerHTML = `situation id range = (${removeDigits(leastrecent,3)} to ${removeDigits(mostrecent,3)})`
+}, 1000 );
+situationid()
