@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Kosugi+Maru&Dosis&family=Urbanist&display=swap" rel="stylesheet">
+
+  <title>バカオ文字</title>
+</head>
+<body class="fun">
+  <div id="page-container">
+    <div id="content-wrap" style="text-align: center; font-family: 'Dosis', sans-serif;">
+      <header>
+        <h1 class="title">アイディオット</h1>
+      </header>
+      
+      <!-- NAVBAR -->
+
+      <nav>
+        <ul class="topnav" style="font-family: 'Dosis', sans-serif;">
+          <li><a href="../index.html"><b>home</b></a></li>
+          <li><a href="../news.html"><b>news</b></a></li>
+          <li><a href="../about.html"><b>about</b></a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">fun</a>
+            <div class="dropdown-content">
+              <a href="../fun/pigame.html">pi game</a>
+              <a href="../fun/amialive.html">the "am i alive test"</a>
+              <a href="../fun/timers.html">timers and countdowns</a>
+              <a href="../fun/WTTA.html">WTTA (AITA game)</a>
+              <a class="active" href="../fun/bakaomoji.html">バカオ文字</a>
+            </div>
+          </li>
+          <li class="dropdown2">
+            <a href="javascript:void(0)" class="dropbtn2">tools</a>
+            <div class="dropdown-content2">
+              <a href="../tools/fe2diffcalc.html">fe2 difficulty calculator</a>
+              <a href="../tools/primecalc.html">prime checker</a>
+              <a href="../tools/audiochanneltest.html">audio channel tester</a>
+              <a href="../tools/worldservercoordinatecalc.html">world server coordinate calculator</a>
+            </div>
+          </li>
+          <li class="right"><a href="../comics/home.html"><b>comics</b></a></li>
+        </ul>
+      </nav>
+
+      <!-- NAVBAR -->
+
+      <!-- ACTUAL WEBSITE -->
+
+      <h1><abbr title="for you english speakers, this is a pun. nothing more.">バカオ文字</abbr></h1>
+      <h4><abbr lang="jp" title="stupid emoticon generator">愚かな顔文字ジェネレーター</abbr></h4>
+      <h1 id="フェース" style="font-size: 96px; font-family: 'Kosugi Maru', sans-serif;">・ー・</h1>
+      <button onclick="copyFace()">コピー</button>
+
+      <form>
+        <label for="感情"><abbr title="emotion">感情：</abbr></label>
+
+        <select name="感情" id="感情">
+          <option value="中性">中性(neutral)</option>
+          <option value="ハッピー">ハッピー(happy)</option>
+          <option value="悲しい">悲しい(sad)</option>
+          <option value="驚いた">驚いた(surprised)</option>
+          <option value="とても驚いた">とても驚いた(very surprised)</option>
+        </select>
+      </form>
+      
+      <!-- ACTUAL WEBSITE -->
+
+    </div>
+    <footer>
+      <p>here's the footer where i'm supposed to put copyright.
+      <br>however, i'm dumb and therefore do not know how to set up copyright. let's just pretend that i did set up a copyright. ideot 2023.
+      <br><strong>this part of the website is made by me, ideot. you're welcome</strong></p>
+    </footer>
+    <script src="../js/bakaomoji.js"></script>
+  </div>
+</body>
+</html>
+
+
