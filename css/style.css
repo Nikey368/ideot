@@ -247,3 +247,14 @@ footer {
     display: inline-block;
     font-size: 16px;
 }
+
+.collapsible {
+    color: rgb(0, 0, 0);
+    background-color:#85ffb4;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 95%;
+}
