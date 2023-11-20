@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis&family=Urbanist&display=swap" rel="stylesheet">
+
+  <title>a better timer for your needs</title>
+</head>
+<body class="tools" id="body">
+  <div id="page-container">
+    <div id="content-wrap" style="text-align: center; font-family: 'Dosis', sans-serif;">
+      <header>
+        <h1 class="title">ideot</h1>
+      </header>
+      
+      <!-- NAVBAR -->
+
+      <nav>
+        <ul class="topnav" style="font-family: 'Dosis', sans-serif;">
+          <li><a href="../index.html"><b>home</b></a></li>
+          <li><a href="../news.html"><b>news</b></a></li>
+          <li><a href="../about.html"><b>about</b></a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">fun</a>
+            <div class="dropdown-content">
+              <a href="../fun/pigame.html">pi game</a>
+              <a href="../fun/amialive.html">the "am i alive test"</a>
+              <a href="../fun/timers.html">timers and countdowns</a>
+              <a href="../fun/WTTA.html">WTTA (AITA game)</a>
+              <a href="../fun/bakaomoji.html">バカオ文字</a>
+            </div>
+          </li>
+          <li class="dropdown2">
+            <a href="javascript:void(0)" class="dropbtn2">tools</a>
+            <div class="dropdown-content2">
+              <a href="../tools/fe2diffcalc.html">fe2 difficulty calculator</a>
+              <a href="../tools/primecalc.html">prime checker</a>
+              <a href="../tools/audiochanneltest.html">audio channel tester</a>
+              <a href="../tools/worldservercoordinatecalc.html">world server coordinate calculator</a>
+              <a class="active" href="../tools/timerplus.html">timer+</a>
+            </div>
+          </li>
+          <li class="right"><a href="../comics/home.html"><b>comics</b></a></li>
+        </ul>
+      </nav>
+
+      <!-- NAVBAR -->
+      
+      <!-- ACTUAL WEBSITE -->
+
+      <h1>timer+</h1>
+      <p>a better timer for your needs</p>
+      
+      <h1 class="timers" style="font-size: 168px;" id="time">00:00:00.000</h1>
+
+      <form>
+        <h3 id="currentsetting">current setting: amount of time</h3>
+        <input type="button" onclick="change()" value="CHANGE">
+        <h1>amount of time:</h1>
+        <label for="hours">hours:</label>
+        <input type="number" id="hours">
+        <label for="minutes">minutes:</label>
+        <input type="number" id="minutes">
+        <label for="seconds">seconds:</label>
+        <input type="number" id="seconds">
+        <label for="milliseconds">milliseconds:</label>
+        <input type="number" id="milliseconds">
+        <br>
+        <h3>OR</h3>
+        <h1>exact time:</h1>
+        <label for="exacthour">time (24h, HH:MM):</label>
+        <input type="number" id="exacthour" step="1">
+        :
+        <input type="number" id="exactminute" step="1">
+        <br>
+        <input type="button" onclick="start()" value="start timer">
+        <h2>warning beeps:</h2>
+        <p>(leave blank / leave at zero if no beep wanted)</p>
+        <h3>one beep occurs at:</h3>
+        <label for="hours">hours:</label>
+        <input type="number" id="onebeephours">
+        <label for="minutes">minutes:</label>
+        <input type="number" id="onebeepminutes">
+        <label for="seconds">seconds:</label>
+        <input type="number" id="onebeepseconds">
+        <label for="milliseconds">milliseconds:</label>
+        <input type="number" id="onebeepmilliseconds">
+        
+        <h3>two beep occurs at:</h3>
+        <label for="hours">hours:</label>
+        <input type="number" id="twobeephours">
+        <label for="minutes">minutes:</label>
+        <input type="number" id="twobeepminutes">
+        <label for="seconds">seconds:</label>
+        <input type="number" id="twobeepseconds">
+        <label for="milliseconds">milliseconds:</label>
+        <input type="number" id="twobeepmilliseconds">
+        
+        <h3>three beep occurs at:</h3>
+        <label for="hours">hours:</label>
+        <input type="number" id="threebeephours">
+        <label for="minutes">minutes:</label>
+        <input type="number" id="threebeepminutes">
+        <label for="seconds">seconds:</label>
+        <input type="number" id="threebeepseconds">
+        <label for="milliseconds">milliseconds:</label>
+        <input type="number" id="threebeepmilliseconds">
+        
+        <h3>four beep occurs at:</h3>
+        <label for="hours">hours:</label>
+        <input type="number" id="fourbeephours">
+        <label for="minutes">minutes:</label>
+        <input type="number" id="fourbeepminutes">
+        <label for="seconds">seconds:</label>
+        <input type="number" id="fourbeepseconds">
+        <label for="milliseconds">milliseconds:</label>
+        <input type="number" id="fourbeepmilliseconds">
+        
+        <h3>long beep occurs at:</h3>
+        <label for="hours">hours:</label>
+        <input type="number" id="longbeephours">
+        <label for="minutes">minutes:</label>
+        <input type="number" id="longbeepminutes">
+        <label for="seconds">seconds:</label>
+        <input type="number" id="longbeepseconds">
+        <label for="milliseconds">milliseconds:</label>
+        <input type="number" id="longbeepmilliseconds">
+
+      </form>
+    </div>
+    <footer>
+      <p>here's the footer where i'm supposed to put copyright.
+      <br>however, i'm dumb and therefore do not know how to set up copyright. let's just pretend that i did set up a copyright. ideot 2023.
+      <br><strong>this part of the website is made by me, ideot. you're welcome</strong></p>
+    </footer>
+    <script src="../js/timerplus.js"></script>
+  </div>
+</body>
+</html>
+
+
