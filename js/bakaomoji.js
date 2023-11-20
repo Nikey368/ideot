@@ -1,26 +1,27 @@
 const dropdown = document.getElementById("感情")
 const emotions = {
-    "中性(neutral)": {leftEye:"・",rightEye:"・",mouth:"ー"},
-    "ハッピー(happy)": {leftEye:"・",rightEye:"・",mouth:"⋃"},
-    "悲しい(sad)": {leftEye:"・",rightEye:"・",mouth:"⋂"},
-    "驚いた(surprised)": {leftEye:"・",rightEye:"・",mouth:"Ｏ"},
-    "とても驚いた(very surprised)": {leftEye:"⦿",rightEye:"⦿",mouth:"Ｏ"},
+    "中性": {leftEye:"・",rightEye:"・",mouth:"ー",blinking:true},
+    "ハッピー": {leftEye:"・",rightEye:"・",mouth:"⋃",blinking:true},
+    "悲しい": {leftEye:"・",rightEye:"・",mouth:"⋂",blinking:true},
+    "驚いた": {leftEye:"・",rightEye:"・",mouth:"Ｏ",blinking:true},
+    "とても驚いた": {leftEye:"⦿",rightEye:"⦿",mouth:"Ｏ",blinking:true},
+    "ああああああああ！": {leftEye:"＞",rightEye:"＜",mouth:"Ｏ",blinking:false},
 }
 var leftEye = "・"
 var rightEye = "・"
 var mouth = "ー"
 let untilnextminute = setInterval(function() {
-    leftEye = emotions[dropdown.options[dropdown.selectedIndex].text]["leftEye"]
-    rightEye = emotions[dropdown.options[dropdown.selectedIndex].text]["rightEye"]
-    mouth = emotions[dropdown.options[dropdown.selectedIndex].text]["mouth"]
+    leftEye = emotions[dropdown.options[dropdown.selectedIndex].value]["leftEye"]
+    rightEye = emotions[dropdown.options[dropdown.selectedIndex].value]["rightEye"]
+    mouth = emotions[dropdown.options[dropdown.selectedIndex].value]["mouth"]
     let randomEye = Math.random()
-    let setlefteye = randomEye < 0.1 ? "-" : leftEye
-    let setrighteye = randomEye < 0.1 ? "-" : rightEye
+    let setlefteye = randomEye < 0.1 && emotions[dropdown.options[dropdown.selectedIndex].value]["blinking"] ? "-" : leftEye
+    let setrighteye = randomEye < 0.1 && emotions[dropdown.options[dropdown.selectedIndex].value]["blinking"]  ? "-" : rightEye
 
     document.getElementById("フェース").innerHTML = setlefteye+mouth+setrighteye
 }, 100 );
 
-function copyFace() {
+function copyFace(withbrackets) {
    // Copy the text inside the text field
   navigator.clipboard.writeText(leftEye+mouth+rightEye);
 
