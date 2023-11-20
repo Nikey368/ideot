@@ -21,10 +21,9 @@ let untilnextminute = setInterval(function() {
     document.getElementById("フェース").innerHTML = setlefteye+mouth+setrighteye
 }, 100 );
 
-function copyFace(withbrackets) {
+function copyFace() {
    // Copy the text inside the text field
   navigator.clipboard.writeText(leftEye+mouth+rightEye);
 
-  // Alert the copied text
   alert("コピーに成功しました：" + leftEye+mouth+rightEye);
 }

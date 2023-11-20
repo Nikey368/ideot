@@ -17,8 +17,11 @@ var nexthour = Math.ceil(webpageopened / 3600000) * 3600000;
 let christmasYear = dateofwebpageopened.getFullYear();
 let christmasDate = new Date(christmasYear, 11, 25);
 
+let halloweenYear = dateofwebpageopened.getFullYear();
+let halloweenDate = new Date(halloweenYear, 9, 31);
+
 let birthdayYear = dateofwebpageopened.getFullYear();
-let birthdayDate = new Date(christmasYear, 11, 28);
+let birthdayDate = new Date(birthdayYear, 11, 28);
 
 if (dateofwebpageopened.getMonth() == 11 && dateofwebpageopened.getDate() >= 25) {
   christmasYear = christmasYear + 1;
@@ -99,6 +102,31 @@ let untilnextchristmas = setInterval(function() {
     if (distance <= 0) {
         christmasYear += 1;
         christmasDate = new Date(christmasYear, 11, 25);
+    }
+}, 1000 );
+
+let untilnexthalloween = setInterval(function() {
+
+    // Get today's date and time
+    let now = new Date().getTime();
+    let countDownDate = halloweenDate.getTime();
+      
+    // Find the distance between now and the count down date
+    let distance = countDownDate - now;
+      
+    // Time calculations for days, hours, minutes and seconds
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+      
+    // Output the result in an element with id="demo"
+    document.getElementById("nexthalloween").innerHTML = days.toString().padStart(3,0) + ":" + hours.toString().padStart(2,0) + ":"
+    + minutes.toString().padStart(2,0) + ":" + seconds.toString().padStart(2,0);
+
+    if (distance <= 0) {
+        halloweenYear += 1;
+        halloweenDate = new Date(halloweenYear, 9, 31);
     }
 }, 1000 );
 
@@ -243,11 +271,11 @@ let untilthatonereallybigunix = setInterval(function() {
     }
 }, 1000 );
 
-let untilarcaneoddysey = setInterval(function() {
+let untiltransnational = setInterval(function() {
 
     // Get today's date and time
     let now = new Date().getTime();
-    let countDownDate = new Date(1696618800000);
+    let countDownDate = new Date(1713016800000);
       
     // Find the distance between now and the count down date
     let distance = countDownDate - now;
@@ -259,11 +287,11 @@ let untilarcaneoddysey = setInterval(function() {
     let seconds = Math.floor((distance % (1000 * 60)) / 1000); 
       
     // Output the result in an element with id="demo"
-    document.getElementById("arcaneoddysey").innerHTML = days.toString().padStart(3,0) + ":" + hours.toString().padStart(2,0) + ":"
+    document.getElementById("transnational").innerHTML = days.toString().padStart(3,0) + ":" + hours.toString().padStart(2,0) + ":"
     + minutes.toString().padStart(2,0) + ":" + seconds.toString().padStart(2,0);
 
     if (distance <= 0) {
-        document.getElementById("arcaneoddysey").innerHTML = "COMPLETE";
+        document.getElementById("transnational").innerHTML = "COMPLETE";
     }
 }, 1000 );
 
@@ -434,3 +462,18 @@ let sincebirthday = setInterval(function() {
         document.getElementById("sincebirthday").innerHTML = "it seems you have time travelled to a time that was before this date. oopsies."
     }
 }, 1000 );
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
