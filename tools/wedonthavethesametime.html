@@ -7,15 +7,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis&family=Urbanist&display=swap" rel="stylesheet">
 
-  <title>i can't hear youuu</title>
+  <title>a better timer for your needs</title>
 </head>
-<body class="tools">
+<body class="tools" id="body">
   <div id="page-container">
     <div id="content-wrap" style="text-align: center; font-family: 'Dosis', sans-serif;">
       <header>
         <h1 class="title">ideot</h1>
       </header>
-
+      
       <!-- NAVBAR -->
 
       <nav>
@@ -38,10 +38,10 @@
             <div class="dropdown-content2">
               <a href="../tools/fe2diffcalc.html">fe2 difficulty calculator</a>
               <a href="../tools/primecalc.html">prime checker</a>
-              <a class="active" href="../tools/audiochanneltest.html">audio channel tester</a>
+              <a href="../tools/audiochanneltest.html">audio channel tester</a>
               <a href="../tools/worldservercoordinatecalc.html">world server coordinate calculator</a>
               <a href="../tools/timerplus.html">timer+</a>
-              <a href="../tools/wedonthavethesametime.html">we don't have the same time</a>
+              <a class="active" href="../tools/wedonthavethesametime.html">we don't have the same time</a>
             </div>
           </li>
           <li class="right"><a href="../comics/home.html"><b>comics</b></a></li>
@@ -52,30 +52,24 @@
       
       <!-- ACTUAL WEBSITE -->
 
-      <h1>audio channel test</h1>
-      <p>if you have headphones that supports stereo audio, use this to check if there is something wrong with your headphones</p>
-      <p>this also doubles as a test to see if you're wearing your headphones the right way around</p>
-      <p>this also triples as a test to see if your headphones/device even supports stereo</p>
+      <h1>we don't have the same time</h1>
+      <p>for those who have way too many friends across different timezones</p>
+      <h2 id="description">wait for it to load please</h2>
       
-      <label for="vol">L channel volume:</label>
-      <input type="range" id="leftvol" name="leftvol" value="0">
-      <br>
-      <label for="vol">R channel volume:</label>
-      <input type="range" id="rightvol" name="rightvol" value="0">
-      <br>
-      <input type="button" id="play" value="play/pause" onclick="onPlay()">
-
-      <!-- ACTUAL WEBSITE -->
-
+      <div class="timers">
+        <h1 style="font-size: 168px; overflow: auto;" id="time">??:??:?? ?M</h1>
+        <h1 id="date">(We don't know, it's still loading)</h1>
       </div>
-      <footer>
-        <p>here's the footer where i'm supposed to put copyright.
-        <br>however, i'm dumb and therefore do not know how to set up copyright. let's just pretend that i did set up a copyright. ideot 2023.
-        <br><strong>this part of the website is made by me, ideot. you're welcome</strong></p>
-      </footer>
+
+      <p>if this page is not working, click on <a href="https://caniuse.com/?search=Intl">this link</a> to check if you're on a browser that supports this</p>
     </div>
+    <footer>
+      <p>here's the footer where i'm supposed to put copyright.
+      <br>however, i'm dumb and therefore do not know how to set up copyright. let's just pretend that i did set up a copyright. ideot 2023.
+      <br><strong>this part of the website is made by me, ideot. you're welcome</strong></p>
+    </footer>
+    <script src="../js/wedonthavethesametime.js"></script>
   </div>
-  <script src="../js/audiochanneltest.js" defer></script>
 </body>
 </html>
 
