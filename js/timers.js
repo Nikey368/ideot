@@ -82,7 +82,7 @@ let untilnexthour = setInterval(function() {
 
 let untilnextchristmas = setInterval(function() {
 
-    // Get today's date and time
+    // Get today's date and time!
     let now = new Date().getTime();
     let countDownDate = christmasDate.getTime();
       

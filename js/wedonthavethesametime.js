@@ -12,13 +12,57 @@ const timezoneCode = {
     "Antartica":"T",
     "Africa":"F",
     "Arctic":"R",
-    "Etc":"C"
+    "Etc":"G",
 }
 const americanCodes = {
     "Argentina":"a",
     "Indiana":"i",
     "Kentucky":"k",
     "North_Dakota":"d",
+}
+const tzShortenings = {
+    "America/New_York":"ny", //north america
+    "America/Los_Angeles":"la",
+    "America/Chicago":"ch",
+    "America/Toronto":"to",
+    "Africa/Cairo":"ca", //africa
+    "Africa/Kinshasa":"ki",
+    "Africa/Lagos":"lg",
+    "Africa/Johannesburg":"jo",
+    "Africa/Luanda":"lu",
+    "Africa/Dar_es_Salaam":"da",
+    "Africa/Khartoum":"kh",
+    "Africa/Abidjan":"ab",
+    "Africa/Addis_Ababa":"ad",
+    "Asia/Tokyo":"tk", //asia
+    "Asia/Shanghai":"sh",
+    "Asia/Manila":"ma",
+    "Asia/Dhaka":"dh",
+    "Asia/Karachi":"ka",
+    "Asia/Chongqing":"cn",
+    "Asia/Istanbul":"ais", //europe (sorry, turkey is in asia according to the timezones)
+    "Europe/Istanbul":"eis",
+    "Europe/Moscow":"mo",
+    "Europe/Paris":"pa",
+    "Europe/London":"lo",
+    "Europe/Madrid":"md",
+    "Europe/Berlin":"be",
+    "Europe/Rome":"ro",
+    "Europe/Athens":"at",
+    "Australia/Melbourne":"me", //oceania
+    "Australia/Sydney":"sy",
+    "Australia/Brisbane":"br",
+    "Australia/Perth":"pe",
+    "Pacific/Auckland":"au",
+    "Australia/Adelaide":"ae",
+    "Pacific/Honolulu":"ho",
+    "Australia/Canberra":"cb",
+    "America/Sao_Paulo":"sp", //south america
+    "America/Buenos_Aires":"ba",
+    "America/Bogota":"bo",
+    "America/Lima":"li",
+    "America/Santiago":"sa",
+    "America/Recife":"re",
 }
 var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 if (searchParams.has('timezone')){
@@ -39,13 +83,15 @@ function shortlinkgenerator() {
         console.log(timezone.substring(firstSlash + 1,secondSlash))
         americanCode = americanCodes[timezone.substring(firstSlash + 1,secondSlash)]
     }
-    shortlink = "https://ideot.xyz/wdhtst?t=" + continent + americanCode + timezone.substring(secondSlash + 1)
+    shortlink = "https://ideot.xyz/wdhtst?t=" + continent + americanCode + timezone.substring(secondSlash + 1).replace("+","%2B")
+    if (timezone in tzShortenings) {
+        shortlink = "https://ideot.xyz/wdhtst?t=" + tzShortenings[timezone]
+    }
     return shortlink
 }
 
 
 function copylink() {
-    // Copy the text inside the text field
    navigator.clipboard.writeText(document.getElementById("shortlink").value);
  }
 
