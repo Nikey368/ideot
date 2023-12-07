@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis&family=Urbanist&display=swap" rel="stylesheet">
 
-  <title>ARE YOU ALIVE</title>
+  <title>cool people list</title>
 </head>
 <body class="fun">
   <div id="page-container">
@@ -27,10 +27,11 @@
             <a href="javascript:void(0)" class="dropbtn">fun</a>
             <div class="dropdown-content">
               <a href="../fun/pigame.html">pi game</a>
-              <a class="active" href="../fun/amialive.html">the "am i alive test"</a>
+              <a href="../fun/amialive.html">the "am i alive test"</a>
               <a href="../fun/timers.html">timers and countdowns</a>
               <a href="../fun/WTTA.html">WTTA (AITA game)</a>
               <a href="../fun/bakaomoji.html">バカオ文字</a>
+              <a class="active" href="../fun/myfavouriteyoutubers.html">my favourite youtubers</a>
             </div>
           </li>
           <li class="dropdown2">
@@ -57,31 +58,112 @@
         <br>
         i'm telling you now, that a flawed thinking style for two reasons:
         <ol style="list-style-position: inside;">
-            <li>a person can simply have ONE favourite youtuber. sometimes one may have many</li>
+            <li>a person can't simply have ONE favourite youtuber. sometimes one may have many</li>
             <li>its not healthy to idolise a celebrity</li>
         </ol>
         <br>
         so, this webpage will solve one of two of these problems
+
       </p>
-      <h4>ordered from highest amount of subscribers to lowest</h4>
-        <div>
-            <h2>tom scott</h2>
-            <h4>british educational channel</h4>
-            <h5>6.81M subscribers</h5>
-            <p>
-                do i really need to introduce him? just a great guy, and a great channel with some really
-                cool videos. cool.
-            </p>
+      <form class="filterListMFY">
+        <h3>nationalities</h3>
+        <div class="nationalities">
+          <label for="nationality-american">american</label>
+          <input id="nationality-american" type="checkbox" checked>
+
+          <label for="nationality-australian">australian</label>
+          <input id="nationality-australian" type="checkbox" checked>
+
+          <label for="nationality-british">british</label>
+          <input id="nationality-british" type="checkbox" checked>
+
+          <label for="nationality-canadian">canadian</label>
+          <input id="nationality-canadian" type="checkbox" checked>
+
+          <label for="nationality-filipino">filipino</label>
+          <input id="nationality-filipino" type="checkbox" checked>
+
+          <label for="nationality-japanese">japanese</label>
+          <input id="nationality-japanese" type="checkbox" checked>
+
+          <label for="nationality-southkorean">south korean</label>
+          <input id="nationality-southkorean" type="checkbox" checked>
+
+          <label for="nationality-unknown">unknown</label>
+          <input id="nationality-unknown" type="checkbox" checked>
         </div>
-        <div>
-            <h2>jay foreman</h2>
-            <h4>british edutainment channel</h4>
-            <h5>1.45M subscribers</h5>
-            <p>
-                map men is probably one of the more popular series, as well as unifinished london.
-                if you want to know more about geography, british politics or, uh, other stuff, then jay foreman
-                is cool i guess. oh yeah, his songs are nice too.
-            </p>
+        <h3>languages</h3>
+        <div class="languages">
+          <label for="languages-english">english</label>
+          <input id="languages-english" type="checkbox" checked>
+
+          <label for="languages-japanese">japanese</label>
+          <input id="languages-japanese" type="checkbox" checked>
+
+          <label for="languages-korean">korean</label>
+          <input id="languages-korean" type="checkbox" checked>
+        </div>
+        <h3>genres</h3>
+        <div class="genres">
+          <label for="genres-animation">animation</label>
+          <input id="genres-animation" type="checkbox" checked>
+
+          <label for="genres-cats">cats!!!!!!!!!</label>
+          <input id="genres-cats" type="checkbox" checked>
+
+          <label for="genres-coding">coding</label>
+          <input id="genres-coding" type="checkbox" checked>
+
+          <label for="genres-critical">critical</label>
+          <input id="genres-critical" type="checkbox" checked>
+
+          <label for="genres-commentary">commentary</label>
+          <input id="genres-commentary" type="checkbox" checked>
+
+          <label for="genres-comedy">comedy</label>
+          <input id="genres-comedy" type="checkbox" checked>
+
+          <label for="genres-educational">educational</label>
+          <input id="genres-educational" type="checkbox" checked>
+
+          <label for="genres-edutainment">edutainment</label>
+          <input id="genres-edutainment" type="checkbox" checked>
+
+          <label for="genres-essay">essay</label>
+          <input id="genres-essay" type="checkbox" checked>
+
+          <label for="genres-gaming">gaming</label>
+          <input id="genres-gaming" type="checkbox" checked>
+
+          <label for="genres-linguistics">linguistics</label>
+          <input id="genres-linguistics" type="checkbox" checked>
+
+          <label for="genres-memes">memes</label>
+          <input id="genres-memes" type="checkbox" checked>
+
+          <label for="genres-music">music</label>
+          <input id="genres-music" type="checkbox" checked>
+
+          <label for="genres-political">political</label>
+          <input id="genres-political" type="checkbox" checked>
+
+          <label for="genres-reaction">reaction</label>
+          <input id="genres-reaction" type="checkbox" checked>
+
+          <label for="genres-reading">reading</label>
+          <input id="genres-reading" type="checkbox" checked>
+
+          <label for="genres-voiceacting">voice acting</label>
+          <input id="genres-voiceacting" type="checkbox" checked>
+        </div>
+      </form>
+      <br>
+      <label for="mostSubscribedToLeast">sort from most subscribed to least?</label>
+      <input type="checkbox" id="mostSubscribedToLeast" checked>
+      <br><br>
+      <button onclick="reload()">reload</button>
+        <div id="channelList">
+
         </div>
       
       <!-- ACTUAL WEBSITE -->
@@ -92,6 +174,7 @@
       <br>however, i'm dumb and therefore do not know how to set up copyright. let's just pretend that i did set up a copyright. ideot 2023.
       <br><strong>this part of the website is made by me, ideot. you're welcome</strong></p>
     </footer>
+    <script src="../js/myfavouriteyoutubers.js"></script>
   </div>
 </body>
 </html>

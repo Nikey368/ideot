@@ -258,3 +258,11 @@ footer {
     font-size: 16px;
     width: 95%;
 }
+
+label:has(+ input[type="checkbox"]:checked) {
+    opacity: 1;
+}
+
+label:has(+ input[type="checkbox"]:not(:checked))  {
+    opacity: 0.3;
+}
