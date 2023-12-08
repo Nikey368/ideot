@@ -4,7 +4,7 @@ channels = [
         channelName = `jay foreman`,
         nationality = [`british`],
         typesOfContent = [`educational`,`edutainment`],
-        languages = [`english`,`french`],
+        languages = [`english`],
         subscriberCount = `1460000`,
         lastWritten = `2023/12/08`,
         description = `
@@ -60,7 +60,7 @@ channels = [
         languages = [`english`],
         subscriberCount = `6040000`,
         lastWritten = `2023/12/08`,
-        description = `the funny british man say the funny things. no, not jeaney collects, the other one.`,
+        description = `he makes really cool smart videos`,
         link = `https://www.youtube.com/@CGPGrey`
     ],
     [
@@ -136,7 +136,7 @@ channels = [
     [
         channelName = `maggie sea`,
         nationality = [`south korean`],
-        typesOfContent = ["animation",`music`,`memes`,`comedy`],
+        typesOfContent = ["animation",`music`,`memes`,`comedy`,`cats`],
         languages = [`english`,`korean`],
         subscriberCount = `121000`,
         lastWritten = `2023/12/08`,
@@ -172,6 +172,26 @@ channels = [
         lastWritten = `2023/12/08`,
         description = `I LOVE CATS I LOVE CATS I LOVE CATS I LOVE CATS (and this man is great)`,
         link = `https://www.youtube.com/@HalfAsleepChris`
+    ],
+    [
+        channelName = `i did a thing`,
+        nationality = [`australian`],
+        typesOfContent = ["political",`edutainment`,`educational`],
+        languages = [`english`],
+        subscriberCount = `4930000`,
+        lastWritten = `2023/12/08`,
+        description = `i mean, who doesn't love insane australians doing insane things?`,
+        link = `https://www.youtube.com/@Ididathing`
+    ],
+    [
+        channelName = `boy boy`,
+        nationality = [`australian`],
+        typesOfContent = ["political",`edutainment`,`educational`,`essay`],
+        languages = [`english`],
+        subscriberCount = `798000`,
+        lastWritten = `2023/12/08`,
+        description = `i mean, who doesn't love insane australians doing insane things?`,
+        link = `https://www.youtube.com/@Boy_Boy`
     ]
 ]
 
