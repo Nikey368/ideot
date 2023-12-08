@@ -136,7 +136,7 @@ channels = [
     [
         channelName = `maggie sea`,
         nationality = [`south korean`],
-        typesOfContent = ["animation",`music`,`memes`,`comedy`,`cats`],
+        typesOfContent = ["animation",`music`,`memes`,`comedy`,`cats!!!!!!!!!`],
         languages = [`english`,`korean`],
         subscriberCount = `121000`,
         lastWritten = `2023/12/08`,
@@ -166,7 +166,7 @@ channels = [
     [
         channelName = `halfasleepchris`,
         nationality = [`british`],
-        typesOfContent = ["animation",`music`,`cats`,`edutainment`,`educational`],
+        typesOfContent = ["animation",`music`,`cats!!!!!!!!!`,`edutainment`,`educational`],
         languages = [`english`],
         subscriberCount = `2840000`,
         lastWritten = `2023/12/08`,
