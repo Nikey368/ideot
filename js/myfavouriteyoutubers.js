@@ -186,12 +186,52 @@ channels = [
     [
         channelName = `boy boy`,
         nationality = [`australian`],
-        typesOfContent = ["political",`edutainment`,`educational`,`essay`],
+        typesOfContent = ["political",`edutainment`,`educational`,`essay`,`comedy`],
         languages = [`english`],
         subscriberCount = `798000`,
         lastWritten = `2023/12/08`,
-        description = `i mean, who doesn't love insane australians doing insane things?`,
+        description = `places a lot of introspectives into society, while also being very satirical and sarcastic. i love it.`,
         link = `https://www.youtube.com/@Boy_Boy`
+    ],
+    [
+        channelName = `ryan george`,
+        nationality = [`canadian`],
+        typesOfContent = ["political",`comedy`,`commentary`],
+        languages = [`english`,`french`],
+        subscriberCount = `1670000`,
+        lastWritten = `2023/12/11`,
+        description = `way too good at making basic human concepts needlessly complicated and makes you question life. fun!`,
+        link = `https://www.youtube.com/@RyanGeorge`
+    ],
+    [
+        channelName = `carykh`,
+        nationality = [`american`],
+        typesOfContent = ["animation",`edutainment`,`educational`,`coding`],
+        languages = [`english`],
+        subscriberCount = `594000`,
+        lastWritten = `2023/12/11`,
+        description = `makes some really cool AI-y stuff (pre 2020), and has a lot of other videos on other subjects too that are fun. similar to jan Misali in a way`,
+        link = `https://www.youtube.com/@carykh`
+    ],
+    [
+        channelName = `niko and kotaro and toro`,
+        nationality = [`japanese`],
+        typesOfContent = ["cats!!!!!!!!!",`memes`],
+        languages = [`japanese`],
+        subscriberCount = `5530`,
+        lastWritten = `2023/12/11`,
+        description = `this is where the wawa cat came from!!! i love wawa cat! i love cat!!!!!!!`,
+        link = `https://www.youtube.com/@nikoandkotaroandtoro5473`
+    ],
+    [
+        channelName = `drew gooden`,
+        nationality = [`american`],
+        typesOfContent = ["commentary",`comedy`,`critical`],
+        languages = [`english`],
+        subscriberCount = `4100000`,
+        lastWritten = `2023/12/11`,
+        description = `ngl, he is actally my favourite commentary youtuber out of all of them, probably because me and him both like dry humour. his videos is able to consistently make me laugh, which is not easy to do`,
+        link = `https://www.youtube.com/@drewisgooden`
     ]
 ]
 
