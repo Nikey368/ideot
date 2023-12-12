@@ -232,6 +232,26 @@ channels = [
         lastWritten = `2023/12/11`,
         description = `ngl, he is actally my favourite commentary youtuber out of all of them, probably because me and him both like dry humour. his videos is able to consistently make me laugh, which is not easy to do`,
         link = `https://www.youtube.com/@drewisgooden`
+    ],
+    [
+        channelName = `いめ４４`,
+        nationality = [`japanese`],
+        typesOfContent = [`music`],
+        languages = [`japanese`,`english`],
+        subscriberCount = `57400`,
+        lastWritten = `2023/12/12`,
+        description = `<span id="nana">なななななななななななななななななななななななななななななななななななな～</span><br><button onclick="showmorelol(true)">show more</button>`,
+        link = `https://www.youtube.com/@ime44`
+    ],
+    [
+        channelName = `kevin temmer tunes`,
+        nationality = [`american`],
+        typesOfContent = ["animation",`comedy`,`memes`],
+        languages = [`english`],
+        subscriberCount = `570000`,
+        lastWritten = `2023/12/12`,
+        description = `one of the biggest animators, and is really cool. also worked on the amazing digital circus as lead animator. sooooooo`,
+        link = `https://www.youtube.com/@TemmerTunes`
     ]
 ]
 
@@ -281,6 +301,20 @@ function getFilter(filter){
     }
     console.log(checkFor)
     return checkFor
+}
+
+var shownmorelol = false
+function showmorelol(){
+    shownmorelol = !shownmorelol
+    if (shownmorelol){
+        longText = "なななななななななななななななななななななななななななななななななななな"
+        for (let i = 0; i < 1000; i++){
+            longText += "なななななななななななななななななななななななななななななななななななな"
+        }   
+        document.getElementById("nana").innerHTML = longText + "～(but seriously, they make some really nice songs)"
+    } else {
+        document.getElementById("nana").innerHTML = "なななななななななななななななななななななななななななななななななななな～"
+    }
 }
 
 function newYoutuber(channelName,nationality,typesOfContent,languages,subscriberCount,lastWritten,description,link){
