@@ -252,6 +252,26 @@ channels = [
         lastWritten = `2023/12/12`,
         description = `one of the biggest animators, and is really cool. also worked on the amazing digital circus as lead animator. sooooooo`,
         link = `https://www.youtube.com/@TemmerTunes`
+    ],
+    [
+        channelName = `the slappable jerk`,
+        nationality = [`unknown`],
+        typesOfContent = [`comedy`],
+        languages = [`english`],
+        subscriberCount = `388000`,
+        lastWritten = `2023/12/14`,
+        description = `if you ever want to watch a bunch of assholes and determine which one is the most assiest hole, this channel is for you! from creepy incels to manipulative husbands to absent fathers and to teddy (who's really just a nice guy), this channel has all the assholes + teddy.`,
+        link = `https://www.youtube.com/@theslappablejerk`
+    ],
+    [
+        channelName = `man carrying thing`,
+        nationality = [`unknown`],
+        typesOfContent = [`comedy`,`commentary`],
+        languages = [`english`],
+        subscriberCount = `388000`,
+        lastWritten = `2023/12/14`,
+        description = `he's incredibly funny, he's plankton farting and dying, and he's a man carrying thing. all you need in life.`,
+        link = `https://www.youtube.com/@theslappablejerk`
     ]
 ]
 
