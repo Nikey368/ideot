@@ -265,13 +265,23 @@ channels = [
     ],
     [
         channelName = `man carrying thing`,
-        nationality = [`unknown`],
+        nationality = [`american`],
         typesOfContent = [`comedy`,`commentary`],
         languages = [`english`],
-        subscriberCount = `388000`,
-        lastWritten = `2023/12/14`,
+        subscriberCount = `375000`,
+        lastWritten = `2023/12/19`,
         description = `he's incredibly funny, he's plankton farting and dying, and he's a man carrying thing. all you need in life.`,
-        link = `https://www.youtube.com/@theslappablejerk`
+        link = `https://www.youtube.com/@ManCarryingThing`
+    ],
+    [
+        channelName = `meffols`,
+        nationality = [`unknown`],
+        typesOfContent = [`memes`,`animation`],
+        languages = [`english`],
+        subscriberCount = `79500`,
+        lastWritten = `2023/12/19`,
+        description = `aneemeishuhn. apparently got popular from omori content, but somehow isn't how i found their content. i mean, yeah sure i did see a video or two from them years ago, but that isn't how i found them okay`,
+        link = `https://www.youtube.com/@meffols`
     ]
 ]
 

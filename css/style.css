@@ -162,7 +162,7 @@ body.fun .title {
     background-color: #78f3af;
     background-image: linear-gradient(180deg, #83f18c, #7bc09e);
     color: #7cc79d;
-    -webkit-text-stroke: 0.1px rgb(122, 56, 40);
+    -webkit-text-stroke: 0.1px rgb(40, 122, 58);
 }
 
 body.empty .title {
