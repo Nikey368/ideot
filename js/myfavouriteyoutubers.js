@@ -282,6 +282,16 @@ channels = [
         lastWritten = `2023/12/19`,
         description = `aneemeishuhn. apparently got popular from omori content, but somehow isn't how i found their content. i mean, yeah sure i did see a video or two from them years ago, but that isn't how i found them okay`,
         link = `https://www.youtube.com/@meffols`
+    ],
+    [
+        channelName = `えーてなー`,
+        nationality = [`japanese`],
+        typesOfContent = [`memes`,`comedy`,`music`],
+        languages = [`japanese`],
+        subscriberCount = `50800`,
+        lastWritten = `2024/03/16`,
+        description = `been a while, huh? anyways this person makes a lot of project sekai otomads so if you don't know what either of those are, you'll be pretty confused. so, uh, learn.`,
+        link = `https://www.youtube.com/@Atenor_MAD`
     ]
 ]
 
