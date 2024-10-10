@@ -222,6 +222,7 @@ if (searchParams.has('timestamp')){
     document.getElementById("shorttimestamplink").value = shortlinkgenerator("timestamp")
     document.getElementById("customlink").value = shortlinkgenerator("custom")
 } else {
+    console.log("all good")
     setInterval(function() {
         let options = {
             timeZone: timezone,
@@ -246,5 +247,6 @@ if (searchParams.has('timestamp')){
         document.getElementById("shorttimestamplink").value = shortlinkgenerator("timestamp")
         document.getElementById("customlink").value = shortlinkgenerator("custom")
     }, 1);
+    console.log(":D")
 }
 
