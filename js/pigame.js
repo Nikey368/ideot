@@ -16,6 +16,21 @@ while (x > 0) {
 let highscore = $.jStorage.get("pigamescores", 0)
 let digits = 0
 
+let startNote = new Audio('../sound/pigame/3.wav')
+
+const noteSounds = [
+    new Audio('../sound/pigame/0.wav'),
+    new Audio('../sound/pigame/1.wav'),
+    new Audio('../sound/pigame/2.wav'),
+    new Audio('../sound/pigame/3.wav'),
+    new Audio('../sound/pigame/4.wav'),
+    new Audio('../sound/pigame/5.wav'),
+    new Audio('../sound/pigame/6.wav'),
+    new Audio('../sound/pigame/7.wav'),
+    new Audio('../sound/pigame/8.wav'),
+    new Audio('../sound/pigame/9.wav')
+]
+
 function playsound(){
     volume = !volume
     if (!start.paused){
@@ -36,14 +51,17 @@ function rainbow(){
     document.getElementById("body").style = "background-image: linear-gradient(#ffffff,#ffffff); "
 }
 
+noteSounds.forEach(element => {
+    element.load()
+});
+
 function input(num){
     if (volume){
         if (digits == 0){
             start.play();
         } else if (digits == 1){
             if (num == "."){
-                let note = new Audio('../sound/pigame/3.wav')
-                note.play();
+                startNote.play();
             }
             start.pause();
             start.load()
@@ -53,7 +71,8 @@ function input(num){
     if (num != "."){
         if (num == pi.toString().charAt(digits)) {
             if (volume) {
-                let note = new Audio('../sound/pigame/'+num.toString()+'.wav')
+                let note = noteSounds[Number(num)]
+                note.load()
                 note.play()
             }
             if (rainbowbg){
