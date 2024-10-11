@@ -242,7 +242,7 @@ if (searchParams.has('timestamp')){
     timestamp = setTimestamp().toMillis()
     document.getElementById("shorttimestamplink").value = shortlinkgenerator("timestamp");
     document.getElementById("customlink").value = shortlinkgenerator("custom");
-    document.getElementById("shortlink").value = shortlinkgenerator(linkTimestamp)
+    document.getElementById("shortlink").value = shortlinkgenerator(Number(searchParams.get('timestamp')));
     document.getElementById("howlongago").removeAttribute("hidden");
     const timer2 = document.getElementById("time2")
     const currentDate2 = document.getElementById("date2")
