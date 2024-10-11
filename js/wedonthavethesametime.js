@@ -1,3 +1,5 @@
+var DateTime = luxon.DateTime;
+
 const searchParams = new URLSearchParams(window.location.search);
 const timer = document.getElementById("time")
 const currentDate = document.getElementById("date")
@@ -68,11 +70,12 @@ const tzShortenings = {
     "America/Recife":"re",
     "UTC":"u",
 }
-var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+var localTimezone = DateTime.now().zoneName;
+var timezone = localTimezone;
 if (searchParams.has('timezone')){
     timezone = searchParams.get('timezone');
 } else {
-    searchParams.set('timezone',Intl.DateTimeFormat().resolvedOptions().timeZone)
+    searchParams.set('timezone',localTimezone)
     window.location.search = searchParams;
 }
 
@@ -165,7 +168,7 @@ function shortlinkgenerator(custom) {
         shortlink = "https://ideot.xyz/wdhtst?t=" + tzShortenings[timezone]
     }
     if (custom == "timestamp") {
-        shortlink += "&s="+Base64.fromNumber(Date.now())
+        shortlink += "&s="+Base64.fromNumber(DateTime.now().toMillis())
     } else if (custom == "custom") {
         shortlink += "&s="+Base64.fromNumber(timestamp)
     }
@@ -180,7 +183,7 @@ function copylink(id) {
    navigator.clipboard.writeText(document.getElementById(id).value);
  }
 
-if (timezone == Intl.DateTimeFormat().resolvedOptions().timeZone) {
+if (timezone == localTimezone) {
     document.getElementById("description").innerHTML = "since you live in the same timezone as the person who sent this (or because you are the same person), the current time for you (and maybe them) is:"
 } else {
     document.getElementById("description").innerHTML = "right now, the time for the person who sent you this is:"
@@ -188,22 +191,35 @@ if (timezone == Intl.DateTimeFormat().resolvedOptions().timeZone) {
 document.getElementById("shortlink").value = shortlinkgenerator()
 
 function setTimestamp() {
-    return new Date(
-        Number(document.getElementById("year").value),
-        Number(document.getElementById("month").value)-1,
-        Number(document.getElementById("day").value),
-        Number(document.getElementById("hour").value),
-        Number(document.getElementById("minute").value),
-        Number(document.getElementById("second").value),
-        Number(document.getElementById("milli").value),
-    )
+    return DateTime.fromObject({
+        year:Number(document.getElementById("year").value),
+        month:Number(document.getElementById("month").value),
+        day:Number(document.getElementById("day").value),
+        hour:Number(document.getElementById("hour").value),
+        minute:Number(document.getElementById("minute").value),
+        second:Number(document.getElementById("second").value),
+        millisecond:Number(document.getElementById("milli").value)
+    },{zone: timezone})
 }
 
 if (searchParams.has('timestamp')){
-    let linkTimestamp = new Date(searchParams.get('timestamp'))
-    document.getElementById("description").innerHTML = "the person that sent you this added a timestamp for " + linkTimestamp.toString() + " - in your timezone that's: "
+    console.log(searchParams.get('timestamp'))
+    let linkTimestamp = Date.now()
+    try {
+        linkTimestamp = new Date(Number(searchParams.get('timestamp')))
+    }
+    catch {
+        try {
+            linkTimestamp = new Date(Base64.toNumber(searchParams.get('timestamp')))
+        }
+        catch {
+            console.warn("wuh oh!");
+        }
+    }
+    console.log(linkTimestamp)
+    document.getElementById("description").innerHTML = "the person that sent you this added a timestamp for " + linkTimestamp.toLocaleString(navigator.language,{timeZone:timezone}) + " - in your timezone that's: "
     let options = {
-        timeZone: timezone,
+        timeZone: localTimezone,
         hour: 'numeric',
         minute: 'numeric',
         second: 'numeric', 
@@ -211,7 +227,7 @@ if (searchParams.has('timestamp')){
       },
       formatter = new Intl.DateTimeFormat(navigator.language, options);
     let dateOptions = {
-          timeZone: timezone,
+          timeZone: localTimezone,
           weekday: 'short',
           year: 'numeric',
           month: 'numeric',
@@ -221,9 +237,46 @@ if (searchParams.has('timestamp')){
         formatter2 = new Intl.DateTimeFormat(navigator.language, dateOptions);
     timer.innerHTML = formatter.format(linkTimestamp)
     currentDate.innerHTML = formatter2.format(linkTimestamp)
-    timestamp = setTimestamp()
-    document.getElementById("shorttimestamplink").value = shortlinkgenerator("timestamp")
-    document.getElementById("customlink").value = shortlinkgenerator("custom")
+    timestamp = setTimestamp().toMillis()
+    document.getElementById("shorttimestamplink").value = shortlinkgenerator("timestamp");
+    document.getElementById("customlink").value = shortlinkgenerator("custom");
+    document.getElementById("howlongago").removeAttribute("hidden");
+    const timer2 = document.getElementById("time2")
+    const currentDate2 = document.getElementById("date2")
+    const weekDate = document.getElementById("weekdate")
+    setInterval(function() {
+        let suffix = " ago"
+        if (linkTimestamp > Date.now()) {
+            document.getElementById("description2").innerHTML = "this timestamp is in the future, happening in"
+            suffix = " from now"
+        }
+
+        let difference = Math.abs(linkTimestamp - Date.now())
+
+        let milli = Math.floor(difference % 1000)
+        let second = Math.floor(difference % (1000 * 60) / (1000))
+        let minute = Math.floor(difference % (1000 * 60 * 60) / (1000 * 60))
+        let hour = Math.floor(difference % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+        let days = Math.floor(difference % (1000 * 60 * 60 * 24 * 365) / (1000 * 60 * 60 * 24))
+        let week = Math.floor(day / 7)
+        let weekday = Math.floor(difference % (1000 * 60 * 60 * 24 * 7) / (1000 * 60 * 60 * 24))
+        let year = Math.floor(difference / (1000 * 60 * 60 * 24 * 365))
+        timer2.innerHTML = year
+        +":"+days.toString().padStart(3,0)
+        +":"+hour.toString().padStart(2,0)
+        +":"+minute.toString().padStart(2,0)
+        +":"+second.toString().padStart(2,0)
+        +":"+milli.toString().padStart(3,0);
+        currentDate2.innerHTML = `(that's ${year} year${year==1 ? "":"s"}, 
+        ${days} day${days==1 ? "":"s"}, 
+        ${hour} hour${hour==1 ? "":"s"}, 
+        ${minute} minute${minute==1 ? "":"s"}, 
+        ${second} second${second==1 ? "":"s"} and  
+        ${milli.toString().padStart(3,0)} millisecond${milli==1 ? "":"s"} ${suffix}!)`
+        timestamp = setTimestamp().toMillis();
+        document.getElementById("shorttimestamplink").value = shortlinkgenerator("timestamp")
+        document.getElementById("customlink").value = shortlinkgenerator("custom")
+    }, 1);
 } else {
     console.log("all good")
     setInterval(function() {

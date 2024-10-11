@@ -148,7 +148,7 @@ if (searchParams.has("s")) {
    try {
     let timestamp = searchParams.get('s');
     timestamp = Base64.toNumber(timestamp)
-    ending += "&timestamp="+timestamp
+    suffix += "&timestamp="+timestamp
    }
    catch {
     console.warn("invalid timestamp")

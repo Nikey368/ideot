@@ -7,6 +7,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis&family=Urbanist&display=swap" rel="stylesheet">
 
+  <script src="
+    https://cdn.jsdelivr.net/npm/luxon@3.5.0/build/global/luxon.min.js">
+  </script>
+
   <title>hey what time is it</title>
 </head>
 <body class="tools" id="body">
@@ -61,6 +65,15 @@
       <div class="timers">
         <h1 style="font-size: 168px; overflow: auto;" id="time">??:??:?? ?M</h1>
         <h1 id="date">(We don't know, it's still loading)</h1>
+      </div>
+
+      <div id="howlongago" hidden>
+        <h2 id="description2">this timestamp has already past, happening exactly</h2>
+        <div class="timers">
+          <h1 style="font-size: 100px; overflow: auto;" id="time2">???:??:??:??:??? ago</h1>
+          <h1 id="date2">(that's ?? years, ??? months, ?? days, ?? hours, ?? minutes, ?? seconds and ?? milliseconds!)</h1>
+          <!--<h1 id="weekdate">(or, ?? years, ??? weeks, ?? days, ?? hours, ?? minutes, ?? seconds and ?? milliseconds!)</h1>-->
+        </div>
       </div>
 
       <label for="shortlink">short link:</label>
@@ -149,7 +162,7 @@
         <option value="Australia/Adelaide">(GMT+09:30) Adelaide</option>
         <option value="Australia/Darwin">(GMT+09:30) Darwin</option>
         <option value="Australia/Brisbane">(GMT+10:00) Brisbane</option>
-        <option value="Australia/Canberra">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+        <option value="Australia/Sydney">(GMT+10:00) Canberra, Melbourne, Sydney</option>
         <option value="Australia/Hobart">(GMT+10:00) Hobart</option>
         <option value="Pacific/Guam">(GMT+10:00) Guam, Port Moresby</option>
         <option value="Asia/Vladivostok">(GMT+10:00) Vladivostok</option>
@@ -162,7 +175,7 @@
        <button onclick="warp()">warp</button>
       <h2>custom timestamp</h1>
         <label for="customlink">specific time link:</label>
-        <input type="url" id="customlink">
+        <input type="url" style="width: 250px;" id="customlink">
         <button onclick="copylink('customlink')">copy</button>
       <br>
       <h2>EDIT HERE:</h2>
@@ -185,7 +198,7 @@
       <input type="number" min="0" max="59" id="second">
       <label for="month"> millisecond:</label>
       <input type="number" min="0" max="999" id="milli"><br>
-      <button onclick="generate('manual')">generate</button>
+      <!--<button onclick="generate('manual')">generate</button>-->
 
 
       <p>if this page is not working, click on <a href="https://caniuse.com/?search=Intl">this link</a> to check if you're on a browser that supports this</p>
