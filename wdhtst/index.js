@@ -13,6 +13,7 @@ const timezoneCode = {
     "GP":"Etc/GMT+",
     "GM":"Etc/GMT-",
     "Z":"US/",
+    "D":"Canada/",
 }
 const americanCodes = {
     "a":"Argentina/",
