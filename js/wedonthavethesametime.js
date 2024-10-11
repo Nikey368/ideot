@@ -2,17 +2,19 @@ const searchParams = new URLSearchParams(window.location.search);
 const timer = document.getElementById("time")
 const currentDate = document.getElementById("date")
 const timezoneCode = {
-    "Europe":"E",
-    "Pacific":"P",
-    "Indian":"I",
-    "Australia":"U",
-    "Atlantic":"A",
-    "America":"M",
-    "Asia":"S",
-    "Antartica":"T",
-    "Africa":"F",
-    "Arctic":"R",
-    "Etc":"G",
+    "E":"Europe/",
+    "P":"Pacific/",
+    "I":"Indian/",
+    "U":"Australia/",
+    "A":"Atlantic/",
+    "M":"America/",
+    "S":"Asia/",
+    "T":"Antartica/",
+    "F":"Africa/",
+    "R":"Arctic/",
+    "GP":"Etc/GMT+",
+    "GM":"Etc/GMT-",
+    "Z":"US/",
 }
 const americanCodes = {
     "Argentina":"a",
