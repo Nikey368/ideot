@@ -242,6 +242,7 @@ if (searchParams.has('timestamp')){
     timestamp = setTimestamp().toMillis()
     document.getElementById("shorttimestamplink").value = shortlinkgenerator("timestamp");
     document.getElementById("customlink").value = shortlinkgenerator("custom");
+    console.log(Number(searchParams.get('timestamp')),Number.isInteger(Number(searchParams.get('timestamp'))),Number.isNaN(Number(searchParams.get('timestamp'))))
     document.getElementById("shortlink").value = shortlinkgenerator(Number(searchParams.get('timestamp')));
     document.getElementById("howlongago").removeAttribute("hidden");
     const timer2 = document.getElementById("time2")
