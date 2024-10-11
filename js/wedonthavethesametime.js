@@ -197,7 +197,7 @@ function setTimestamp() {
 }
 
 if (searchParams.has('timestamp')){
-    let linkTimestamp = new Date(searchParams.has('timestamp'))
+    let linkTimestamp = new Date(searchParams.get('timestamp'))
     document.getElementById("description").innerHTML = "the person that sent you this added a timestamp for " + linkTimestamp.toString() + " - in your timezone that's: "
     let options = {
         timeZone: timezone,
@@ -216,8 +216,8 @@ if (searchParams.has('timestamp')){
           timeZoneName: "short",
         },
         formatter2 = new Intl.DateTimeFormat(navigator.language, dateOptions);
-    timer.innerHTML = formatter.format(new Date(searchParams.has('timestamp')))
-    currentDate.innerHTML = formatter2.format(new Date(searchParams.has('timestamp')))
+    timer.innerHTML = formatter.format(linkTimestamp)
+    currentDate.innerHTML = formatter2.format(linkTimestamp)
     timestamp = setTimestamp()
     document.getElementById("shorttimestamplink").value = shortlinkgenerator("timestamp")
     document.getElementById("customlink").value = shortlinkgenerator("custom")

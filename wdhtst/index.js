@@ -126,7 +126,7 @@ Base64 = {
     }
 } // reb.cabin and oka from stack overflow https://stackoverflow.com/questions/6213227/fastest-way-to-convert-a-number-to-radix-64-in-javascript
 
-let ending = ""
+let suffix = ""
 if (searchParams.has('t')){
     let timezone = searchParams.get('t');
     ending = timezone.substring(1)
@@ -139,7 +139,7 @@ if (searchParams.has('t')){
     if (searchParams.get('t') in tzShortenings) {
         timezone = tzShortenings[searchParams.get('t')]
     }
-    ending += "?timezone="+timezone
+    suffix += "?timezone="+timezone
 } 
 if (searchParams.has("s")) {
    try {
@@ -151,4 +151,4 @@ if (searchParams.has("s")) {
     console.warn("invalid timestamp")
    }
 }
-window.location.replace("http://ideot.xyz/tools/wedonthavethesametime.html"+ending);
+window.location.replace("http://ideot.xyz/tools/wedonthavethesametime.html"+suffix);
