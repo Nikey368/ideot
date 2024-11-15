@@ -31,6 +31,10 @@ body.fun ul.topnav {
     background-color: #48c477;
 }
 
+body.forms ul.topnav {
+    background-color: #0f1161;
+}
+
 body.empty ul.topnav {
     background-color: #000000;
 }
@@ -63,6 +67,10 @@ body.tools ul.topnav li a:hover:not(.active), body.tools .dropdown:hover .dropbt
 body.fun ul.topnav li a:hover:not(.active), body.fun .dropdown:hover .dropbtn, body.fun .dropdown2:hover .dropbtn2 {
     background-color: #287044;
 }
+  
+body.forms ul.topnav li a:hover:not(.active), body.forms .dropdown:hover .dropbtn, body.forms .dropdown2:hover .dropbtn2 {
+    background-color: #050633;
+}
 
 body.empty ul.topnav li a:hover:not(.active), body.fun .dropdown:hover .dropbtn, body.fun .dropdown2:hover .dropbtn2 {
     background-color: #505050;
@@ -90,6 +98,10 @@ body.tools .dropdown-content, body.tools .dropdown-content2 {
 
 body.fun .dropdown-content, body.fun .dropdown-content2 {
     background-color: #48c477;
+}
+
+body.forms .dropdown-content, body.forms .dropdown-content2 {
+    background-color: #0f1161;
 }
 
 body.empty .dropdown-content, body.empty .dropdown-content2 {
@@ -123,6 +135,10 @@ body.tools .active {
 
 body.fun .active {
     background-color: #a4e7c8;
+}
+
+body.forms .active {
+    background-color: #8fb7f3;
 }
 
 body.empty .active {
@@ -165,6 +181,13 @@ body.fun .title {
     -webkit-text-stroke: 0.1px rgb(40, 122, 58);
 }
 
+body.forms .title {
+    background-color: #8a78f3;
+    background-image: linear-gradient(180deg, #e2d1f1, #866eac);
+    color: #8a78f3;
+    -webkit-text-stroke: 0.1px rgb(71, 40, 122);
+}
+
 body.empty .title {
     background-color: #000000;
     color: #000000;
@@ -191,6 +214,11 @@ body.tools {
 
 body.fun {
     background-image: linear-gradient(#c6ecc9, #9de6cb); 
+}
+
+body.forms {
+    background-image: linear-gradient(#8b7ac9, #6a4b94); 
+    color: white;
 }
 
 body.empty {

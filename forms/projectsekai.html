@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis&family=Urbanist&display=swap" rel="stylesheet">
+
+  <style>
+    table {
+        width: 70%;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    td, th {
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(odd) {
+        background-color:#00000099;
+    }
+    tr:nth-child(even) {
+        background-color:#00000066;
+    }
+  </style>
+
+  <title>the more important* election</title>
+</head>
+<body class="forms">
+  <div id="page-container">
+    <div id="content-wrap" style="text-align: center; font-family: 'Dosis', sans-serif;">
+      <header>
+        <h1 class="title">ideot</h1>
+      </header>
+      
+      <!-- NAVBAR -->
+
+      <nav>
+        <ul class="topnav" style="font-family: 'Dosis', sans-serif;">
+          <li><a href="../index.html"><b>home</b></a></li>
+          <li><a href="../news.html"><b>news</b></a></li>
+          <li><a href="../about.html"><b>about</b></a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">fun</a>
+            <div class="dropdown-content">
+              <a href="../fun/pigame.html">pi game</a>
+              <a href="../fun/amialive.html">the "am i alive test"</a>
+              <a href="../fun/timers.html">timers and countdowns</a>
+              <a href="../fun/WTTA.html">WTTA (AITA game)</a>
+              <a href="../fun/bakaomoji.html">バカオ文字</a>
+              <a href="../fun/myfavouriteyoutubers.html">my favourite youtubers</a>
+              <a href="../fun/jermanamegenerator.html">jerma name generator</a>
+            </div>
+          </li>
+          <li class="dropdown2">
+            <a href="javascript:void(0)" class="dropbtn2">tools</a>
+            <div class="dropdown-content2">
+              <a href="../tools/fe2diffcalc.html">fe2 difficulty calculator</a>
+              <a href="../tools/primecalc.html">prime checker</a>
+              <a href="../tools/audiochanneltest.html">audio channel tester</a>
+              <a href="../tools/worldservercoordinatecalc.html">world server coordinate calculator</a>
+              <a href="../tools/timerplus.html">timer+</a>
+              <a href="../tools/wedonthavethesametime.html">we don't have the same time</a>
+            </div>
+          </li>
+          <li class="right"><a href="../comics/home.html"><b>comics</b></a></li>
+        </ul>
+      </nav>
+
+      <!-- NAVBAR -->
+
+      <!-- ACTUAL WEBSITE -->
+
+      <h1>hello and welcome to the mid-november 2024 general project sekai character election!</h1>
+      <p>this is totally just a general voting poll for your favourite project sekai characters and not at all related to politcal science and voting systems</p>
+
+      <h3>how do i vote?</h3>
+      <p>simple! next to each character there is a dropdown where you can select what placement, out of 20, you would give each character. basically, for any given character you should give them a placement out of 20. 1st is the best, 20th is the worst.</p>
+      <br>
+      <p>technically, you can get away with only voting some of the 20, but this runs the risk of having your vote becoming invalidated and having a character voted in with the minority of the vote! actually, forget i said that this isn't supposed to be about political science.</p>
+      <br>
+      <p>there are to be no ties, no two characters may have the same rating.</p>
+      <br>
+      <p>once you're done ranking the characters, you then can give them a tick or not depending if you would be happy if they were crowned best character in project sekai. if you don't, then don't tick their name. this is transitive, as in if you tick a character's name it'll automatically tick any character ranked above and de-tick any character ranked below.</p>
+      <br>
+      <p>got all that? no? good, that makes it easier to manipulate you. i mean, i didn't say anything. <span style="font-size: xx-small;">(because i typed it out hehehe)</span></p>
+      
+
+      <form action="https://api.staticforms.xyz/submit" method="post">
+        <table id="voteTable">
+        </table>
+        <!-- Replace with accesKey sent to your email -->
+        <input type="hidden" name="accessKey" value="ef8167fa-295f-4abe-8373-771eabbe8d97"> <!-- Required --><br>
+        <input type="text" name="honeypot" style="display: none;"> <!-- Optional -->
+        <input type="submit" value="Submit" />
+    </form>
+      
+      <!-- ACTUAL WEBSITE -->
+
+    </div>
+    <footer>
+      <p>here's the footer where i'm supposed to put copyright.
+      <br>turns out copyright is pretty easy to set up. this part of the website uses the creative commons liscense CC BY-NC-SA 4.0. ideot 2024.
+      <br><strong>this part of the website is made by me, ideot. you're welcome</strong></p>
+    </footer>
+  </div>
+  <script src="../js/projectsekaivoting.js" defer></script>
+</body>
+</html>
+
+
