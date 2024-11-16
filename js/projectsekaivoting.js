@@ -105,7 +105,7 @@ characters.forEach(char => {
     <td style='color:${charProperties[char].color};'><b>${char}</b></td>
     <td>
          <select name="$${char}">
-            <option selected>-</option>
+            <option disabled selected>-</option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -137,9 +137,28 @@ table.innerHTML += template
 var selects = document.querySelectorAll("select")
 var oldVal = {}
 
+var selOpts = document.querySelectorAll("option")
+
+function resetOptionClasses() {
+    let selectedVals = []
+    selects.forEach(uniqSel => {
+        if (uniqSel.value != "-") {
+            selectedVals.push(uniqSel.value)
+        }
+    });
+    selOpts.forEach(opt => {
+        opt.className = ""
+        if (selectedVals.includes(opt.innerHTML)) {
+            opt.className = "chosen"
+        }
+    })
+}
+
+
 selects.forEach(selElem => {
     oldVal[selElem.parentElement.parentElement.getElementsByTagName("td")[0].innerHTML] = selElem.value;
     selElem.addEventListener("change",function(e) {
+        let allSet = false
         selects.forEach(uniqSel => {
             if (selElem.value == uniqSel.value && selElem != uniqSel) {
                 let optIndex = Number(oldVal[selElem.parentElement.parentElement.getElementsByTagName("td")[0].innerHTML])
@@ -147,9 +166,25 @@ selects.forEach(selElem => {
                 uniqSel.options[optIndex].selected = 'selected';
                 oldVal[uniqSel.parentElement.parentElement.getElementsByTagName("td")[0].innerHTML] = uniqSel.value;
             }
+            allSet = !allSet ? (uniqSel.value == "-") : true
         });
         oldVal[selElem.parentElement.parentElement.getElementsByTagName("td")[0].innerHTML] = selElem.value;
         sortTable()
+        let setToTrueOrFalse = selElem.parentElement.parentElement.getElementsByTagName("td")[2].getElementsByTagName("input")[0].checked;
+        checkboxes.forEach(uniqCB => {
+            let uniqCBValue = uniqCB.parentElement.parentElement.getElementsByTagName("td")[1].getElementsByTagName("select")[0].value;
+            uniqCBValue = isNaN(uniqCBValue) ? 0 : uniqCBValue;
+            if (Number(uniqCBValue) > Number(selElem.value)) {
+                if (uniqCB.checked) {
+                    setToTrueOrFalse = true;
+                }
+            }
+        });
+        resetOptionClasses()
+        selElem.parentElement.parentElement.getElementsByTagName("td")[2].getElementsByTagName("input")[0].checked = setToTrueOrFalse;
+        selElem.parentElement.parentElement.className = selElem.value != "-" ? "resolved" : ""
+        selElem.parentElement.parentElement.className = setToTrueOrFalse ? " checked" : selElem.parentElement.parentElement.className
+        document.getElementById("submitButton").disabled = allSet;
     })
 });
 
@@ -172,7 +207,11 @@ checkboxes.forEach(checkbox => {
                         }
                     }
                 }
+                uniqCB.parentElement.parentElement.className = uniqCBValue != "-" ? " resolved" : ""
+                uniqCB.parentElement.parentElement.className = uniqCB.checked ? "checked" : uniqCB.parentElement.parentElement.className
             });
         }
+        checkbox.parentElement.parentElement.className = cbValue != "-" ? " resolved" : ""
+        checkbox.parentElement.parentElement.className = checkbox.checked ? "checked" : checkbox.parentElement.parentElement.className
     })
 });
