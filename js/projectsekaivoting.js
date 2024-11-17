@@ -116,6 +116,7 @@ Base64 = {
 
 const voterId = Base64.fromNumber(Date.now() - 1000000000000)
 document.getElementById("voterID").innerHTML = `(voter id: #${voterId})`
+document.getElementById("voterIDfield").value = voterId
 document.getElementById("redirectLink").value = "https://ideot.xyz/forms/thanksforvoting.html?id="+voterId
 
 function shuffleArray(array) {
