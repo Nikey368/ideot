@@ -61,8 +61,9 @@
       <p>(click image to download)</p>
       <a href="../img/ivoted.png" download target="_blank">
         <img src="../img/ivoted.png">
-      </a>
-      
+      </a><br>
+      <button type="button" onclick="showVoterID()">show voter ID</button>
+      <p id="showID"></p>
       <!-- ACTUAL WEBSITE -->
 
     </div>
@@ -72,6 +73,16 @@
       <br><strong>this part of the website is made by me, ideot. you're welcome</strong></p>
     </footer>
   </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    function showVoterID() {
+      let voterID = urlParams.get("id")
+      if (!voterID) {
+        voterID = "voter ID not found"
+      }
+      document.getElementById("showID").innerHTML = voterID;
+    }
+  </script>
 </body>
 </html>
 
