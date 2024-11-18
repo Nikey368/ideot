@@ -166,40 +166,46 @@ shuffleArray(characters)
 
 table.innerHTML += headers
 
-characters.forEach(char => {
-    let template = `
-<tr>
-    <td style='color:${charProperties[char].color};'><b>${char}</b></td>
-    <td>
-         <select name="$${char}">
-            <option disabled selected>-</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-            <option>20</option>
-        </select>
-    </td>
-    <td><input name="$approval-${char}" class="checkboxes" type="checkbox"></td>
-</tr>
-`
-table.innerHTML += template
-});
+if (Date.now() < 1731916799999) {
+    characters.forEach(char => {
+        let template = `
+    <tr>
+        <td style='color:${charProperties[char].color};'><b>${char}</b></td>
+        <td>
+             <select name="$${char}">
+                <option disabled selected>-</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+            </select>
+        </td>
+        <td><input name="$approval-${char}" class="checkboxes" type="checkbox"></td>
+    </tr>
+    `
+    table.innerHTML += template
+    });
+} else {
+    document.getElementById("submitButton").value = "voting has ended."
+}
+
+
 
 var selects = document.querySelectorAll("select")
 var oldVal = {}
