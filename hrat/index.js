@@ -1,4 +1,4 @@
-const searchParams = new URLSearchParams(window.location.search);
+/*const searchParams = new URLSearchParams(window.location.search);
 const timezoneCode = {
     "E":"Europe/",
     "P":"Pacific/",
@@ -64,7 +64,7 @@ const tzShortenings = {
     "li":"America/Lima",
     "sa":"America/Santiago",
     "re":"America/Recife",
-    "u":"UTC",
+    "UTC":"u",
 }
 
 Base64 = {
@@ -153,5 +153,5 @@ if (searchParams.has("s")) {
    catch {
     console.warn("invalid timestamp")
    }
-}
-window.location.replace("http://ideot.xyz/tools/wedonthavethesametime.html"+suffix);
+}*/
+window.location.replace("http://ideot.xyz/tools/howrareisthis.html");
