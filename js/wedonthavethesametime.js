@@ -4,20 +4,19 @@ const searchParams = new URLSearchParams(window.location.search);
 const timer = document.getElementById("time")
 const currentDate = document.getElementById("date")
 const timezoneCode = {
-    "E":"Europe/",
-    "P":"Pacific/",
-    "I":"Indian/",
-    "U":"Australia/",
-    "A":"Atlantic/",
-    "M":"America/",
-    "S":"Asia/",
-    "T":"Antartica/",
-    "F":"Africa/",
-    "R":"Arctic/",
-    "GP":"Etc/GMT+",
-    "GM":"Etc/GMT-",
-    "Z":"US/",
-    "D":"Canada/",
+    "Europe/":"E",
+    "Pacific/":"P",
+    "Indian/":"I",
+    "Australia/":"U",
+    "Atlantic/":"A",
+    "America/":"M",
+    "Asia/":"S",
+    "Antartica/":"T",
+    "Africa/":"F",
+    "Arctic/":"R",
+    "Etc/":"G",
+    "US/":"Z",
+    "Canada/":"D",
 }
 const americanCodes = {
     "Argentina":"a",
@@ -155,13 +154,13 @@ let timestamp = setTimestamp()
 function shortlinkgenerator(custom) {
     shortlink = ""
     firstSlash = timezone.indexOf("/")
-    //console.log(timezone.substring(0,firstSlash))
-    continent = timezoneCode[timezone.substring(0,firstSlash)]
+    console.log(timezone.substring(0,firstSlash + 1))
+    continent = timezoneCode[timezone.substring(0,firstSlash + 1)]
     secondSlash = timezone.lastIndexOf("/")
     americanCode = ""
     if (firstSlash != secondSlash) {
         //console.log(timezone.substring(firstSlash + 1,secondSlash))
-        americanCode = americanCodes[timezone.substring(firstSlash + 1,secondSlash)]
+        americanCode = americanCodes[timezone.substring(firstSlash + 2,secondSlash)]
     }
     shortlink = "https://ideot.xyz/wdhtst?t=" + continent + americanCode + timezone.substring(secondSlash + 1).replace("+","%2B")
     if (timezone in tzShortenings) {

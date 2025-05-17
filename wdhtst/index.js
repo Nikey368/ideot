@@ -10,8 +10,7 @@ const timezoneCode = {
     "T":"Antartica/",
     "F":"Africa/",
     "R":"Arctic/",
-    "GP":"Etc/GMT+",
-    "GM":"Etc/GMT-",
+    "G":"Etc",
     "Z":"US/",
     "D":"Canada/",
 }
