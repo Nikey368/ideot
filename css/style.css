@@ -311,3 +311,30 @@ label:has(+ input[type="checkbox"]:checked) {
 label:has(+ input[type="checkbox"]:not(:checked))  {
     opacity: 0.3;
 }
+
+.wdhtstTimer {
+    overflow: auto;
+}
+
+.wdhtstBigTimer {
+    font-size: 168px;
+}
+
+.wdhtstSmallTimer {
+    font-size: 100px; 
+}
+
+@media (max-width: 40em) {
+    #timezone {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 73.25em) {
+    .wdhtstBigTimer {
+        font-size: 14vw;
+    }
+    .wdhtstSmallTimer {
+        font-size: 8vw;
+    }
+}

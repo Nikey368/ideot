@@ -1,0 +1,27 @@
+.noerror {
+    color: #ffffff00;
+    transition: color 1s 0.1s;
+    display: none;
+}
+
+.error {
+    color: #ff0000ff;
+    font-size: 28px;
+    display: block;
+    margin: 5px auto;
+}
+
+.output {
+    font-size: 32px;
+}
+.outputList {
+    font-size: 24px;
+}
+
+.outputList > p {
+    display: block;
+}
+
+i, .output > p > span, .outputList > p > span {
+    font-family: "CMU Serif", "serif";
+}

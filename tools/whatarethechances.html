@@ -2,10 +2,12 @@
 <html>
 <head>
   <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+  <link href="../css/watc.css" rel="stylesheet" type="text/css" media="all">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis&family=Urbanist&display=swap" rel="stylesheet">
+  <link href=" https://cdn.jsdelivr.net/npm/computer-modern@0.1.3/cmu-serif.min.css " rel="stylesheet">
 
   <title>rising water evacuation</title>
 </head>
@@ -59,12 +61,40 @@
       
       <select>
         <option>select here</option>
-        <option>comparer</option>
+        <option selected>comparer</option>
         <option>project sekai gacha pulls</option>
+      </select><br>
+      <select id="inputType" onchange="changeInputType()">
+        <option value="null">input type</option>
+        <option value="raw">raw numbers (x chance, 0.0005)</option>
+        <option value="scientific"">scientific numbers (x × 10<sup>^y<sup> chance, 5 × 10<sup>^-4</sup>)</option>
+        <option value="percentage">percentage (x% chance, 0.05%)</option>
+        <option value="fractional">fractional (1 in x chance, 1 in 2000)</option>
       </select>
 
+      <p id='error' class="noerror">ERROR</p>
+
       <div class="comparer">
-        <input type="number"><button>x chance</button><button>x% chance</button><button>1 in x chance</button>
+        <span hidden id="fractional">
+          <p style="display: inline;">1 in </p>
+        </span>
+        <input oninput="changeInputType()" id="input" type="number">
+        <span hidden id="scientific">
+          <p style="display: inline;"> × 10 ^ </p><input id="exponent" value="0" style="text-align: center; width:60px" type="number">
+        </span>
+        <span hidden id="percentage">
+          <p style="display: inline;">%</p>
+        </span>
+        
+        <button onclick="compare()">COMPARE</button>
+
+        <div class="output">
+          <p id="outputLabel">Analyse probability by inputting a number above.</p>
+          <div class="outputList" id="output">
+
+          </div>
+        </div>
+
       </div>
 
       <!-- ACTUAL WEBSITE -->
@@ -77,6 +107,8 @@
       </footer>
     </div>
   </div>
+  <!-- <script src="../lib/bignumberjs/bignumber.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.5.0/decimal.js" defer></script>
   <script src="../js/watc.js" defer></script>
 </body>
 </html>
